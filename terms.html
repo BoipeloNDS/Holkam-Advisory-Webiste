@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Terms of Service — Holkam Advisory" />
+  <meta name="robots" content="noindex" />
+  <title>Terms of Service — Holkam Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+
+  <style>
+    body { background-color: var(--color-black); }
+    .legal-page {
+      min-height: 100vh;
+      padding-top: calc(var(--nav-height) + var(--space-80));
+      padding-bottom: var(--space-120);
+    }
+    .legal-page__inner { max-width: 780px; margin-inline: auto; padding-inline: var(--space-48); }
+    .legal-page__back {
+      display: inline-flex; align-items: center; gap: var(--space-8);
+      font-family: var(--font-ui); font-size: var(--text-xs); letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: var(--space-64);
+      transition: color var(--transition-base);
+    }
+    .legal-page__back:hover { color: rgba(255,255,255,0.75); }
+    .legal-page__eyebrow { color: rgba(255,255,255,0.35); margin-bottom: var(--space-16); }
+    .legal-page__title { font-family: var(--font-display); font-size: var(--text-5xl); font-weight: 400; font-style: italic; color: var(--color-white); line-height: 1.1; margin-bottom: var(--space-16); }
+    .legal-page__date { font-family: var(--font-ui); font-size: var(--text-xs); letter-spacing: 0.12em; color: rgba(255,255,255,0.3); margin-bottom: var(--space-64); display: block; }
+    .legal-page__divider { width: 48px; height: 1px; background: rgba(255,255,255,0.12); margin-bottom: var(--space-64); }
+    .legal-content h2 { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 500; color: var(--color-white); margin-top: var(--space-64); margin-bottom: var(--space-24); }
+    .legal-content p { font-family: var(--font-body); font-size: var(--text-xl); color: rgba(255,255,255,0.65); line-height: 1.85; margin-bottom: var(--space-24); }
+    .legal-content a { color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.2); transition: color var(--transition-fast), border-color var(--transition-fast); }
+    .legal-content a:hover { color: var(--color-white); border-color: var(--color-white); }
+    @media (max-width: 768px) { .legal-page__inner { padding-inline: var(--space-24); } .legal-page__title { font-size: var(--text-4xl); } }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-nav site-nav--inverted" id="site-nav" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <ul class="nav-links nav-links--left" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="approach.html">Approach</a></li>
+      </ul>
+      <a href="index.html" class="nav-logo" aria-label="Holkam Advisory — home">
+        <img src="assets/logo.png" alt="Holkam Advisory" class="nav-logo__img" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+        <span class="nav-logo__wordmark" style="display:none;">
+          <span class="nav-logo__text">HOLKAM</span>
+          <span class="nav-logo__sub">EST. 2026 — ADELAIDE</span>
+        </span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links nav-links--right" role="list">
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="book.html" class="btn btn--outline nav-cta">Book a Call</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="mobile-menu__overlay" id="mobile-overlay"></div>
+    <nav class="mobile-menu__drawer">
+      <button class="mobile-menu__close" id="mobile-close" aria-label="Close menu">&times;</button>
+      <ul role="list">
+        <li><a href="index.html"    class="mobile-link">Home</a></li>
+        <li><a href="about.html"    class="mobile-link">About</a></li>
+        <li><a href="services.html" class="mobile-link">Services</a></li>
+        <li><a href="approach.html" class="mobile-link">Approach</a></li>
+        <li><a href="team.html"     class="mobile-link">Our Team</a></li>
+        <li><a href="contact.html"  class="mobile-link">Contact</a></li>
+      </ul>
+      <a href="book.html" class="btn btn--dark mobile-cta">Book a Call</a>
+    </nav>
+  </div>
+
+
+  <main class="legal-page">
+    <div class="legal-page__inner">
+      <a href="index.html" class="legal-page__back">&larr; Back to Holkam Advisory</a>
+
+      <p class="eyebrow eyebrow--light legal-page__eyebrow">LEGAL</p>
+      <h1 class="legal-page__title">Terms of Service.</h1>
+      <span class="legal-page__date">Last updated: May 2026</span>
+      <div class="legal-page__divider"></div>
+
+      <div class="legal-content">
+        <p>
+          By accessing holkamadvisory.com or engaging Holkam Advisory (Pty) Ltd (&ldquo;Holkam
+          Advisory&rdquo;) for strategic intelligence services, you agree to the following terms.
+          Please read them carefully before proceeding.
+        </p>
+
+        <h2>Services</h2>
+        <p>
+          Holkam Advisory provides strategic intelligence, market research, competitive analysis,
+          and advisory services to business owners and leadership teams. The specific scope,
+          deliverables, and commercial terms of any engagement are outlined in a separate engagement
+          agreement signed by both parties.
+        </p>
+
+        <h2>Confidentiality</h2>
+        <p>
+          All intelligence reports, briefings, analysis, and communications produced by Holkam
+          Advisory are confidential and proprietary to the engaging client. These materials are
+          provided for your internal strategic use only. Unauthorised reproduction, distribution,
+          or disclosure to third parties is strictly prohibited without prior written consent from
+          Holkam Advisory.
+        </p>
+
+        <h2>Intellectual Property</h2>
+        <p>
+          Holkam Advisory retains intellectual property rights over all methodologies, frameworks,
+          and analytical tools used in delivering its services. Clients receive a non-exclusive
+          licence to use deliverables for internal purposes only. This website and its content
+          remain the property of Holkam Advisory.
+        </p>
+
+        <h2>Disclaimer</h2>
+        <p>
+          Intelligence and analysis provided by Holkam Advisory are based on available information
+          at the time of delivery and are intended to support strategic decision-making. They do
+          not constitute legal, financial, or investment advice. Holkam Advisory is not liable for
+          decisions made based on our intelligence products.
+        </p>
+
+        <h2>Governing Law</h2>
+        <p>
+          These terms are governed by the laws of South Australia, Australia. Any disputes arising
+          from engagement with Holkam Advisory shall be subject to the exclusive jurisdiction of
+          the courts of South Australia.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          For questions regarding these terms, contact
+          <a href="mailto:info@holkamadvisory.com">info@holkamadvisory.com</a>.
+        </p>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer-enhanced" role="contentinfo">
+    <div class="footer-main container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col--brand">
+          <a href="index.html" class="footer-logo" aria-label="Holkam Advisory — home">
+            <img src="assets/logo.png" alt="Holkam Advisory" class="footer-logo__img" />
+          </a>
+          <p class="footer-tagline"><em>Intelligence built on heritage.</em></p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="approach.html">Approach</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Legal</h4>
+          <ul class="footer-links-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Connect</h4>
+          <a href="mailto:info@holkamadvisory.com" class="footer-email-link">info@holkamadvisory.com</a>
+          <p class="footer-location">Adelaide, Australia &bull; Pretoria, South Africa</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="container footer-bar__inner">
+        <p class="footer-bar__copy">&copy; 2026 Holkam Advisory (Pty) Ltd. All rights reserved.</p>
+        <div class="footer-bar__legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <span>&middot;</span>
+          <a href="terms.html">Terms of Service</a>
+          <span>&middot;</span>
+          <a href="cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

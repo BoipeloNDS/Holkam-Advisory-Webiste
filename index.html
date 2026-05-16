@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Holkam Advisory — Strategic intelligence for business leaders. Established 2026, Adelaide." />
+  <meta property="og:title"       content="Holkam Advisory" />
+  <meta property="og:description" content="Intelligence built on heritage." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://holkamadvisory.com" />
+  <meta property="og:image"       content="https://holkamadvisory.com/assets/images/og-cover.jpg" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <title>Holkam Advisory — Business Intelligence</title>
+  <link rel="canonical" href="https://holkamadvisory.com" />
+  <!-- Favicon — save your icon file as assets/favicon.png -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION — inverted (white text on dark video hero)
+       ============================================================ -->
+  <header class="site-nav site-nav--inverted" id="site-nav" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <ul class="nav-links nav-links--left" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="approach.html">Approach</a></li>
+      </ul>
+      <!-- USER ASSET: logo.svg = white wordmark for dark backgrounds -->
+      <a href="index.html" class="nav-logo" aria-label="Holkam Advisory — home">
+        <img src="assets/logo.png" alt="Holkam Advisory" class="nav-logo__img" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+        <span class="nav-logo__wordmark" style="display:none;">
+          <span class="nav-logo__text">HOLKAM</span>
+          <span class="nav-logo__sub">EST. 2026 — ADELAIDE</span>
+        </span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links nav-links--right" role="list">
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="book.html" class="btn btn--outline nav-cta">Book a Call</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="mobile-menu__overlay" id="mobile-overlay"></div>
+    <nav class="mobile-menu__drawer">
+      <button class="mobile-menu__close" id="mobile-close" aria-label="Close menu">&times;</button>
+      <ul role="list">
+        <li><a href="index.html"    class="mobile-link active">Home</a></li>
+        <li><a href="about.html"    class="mobile-link">About</a></li>
+        <li><a href="services.html" class="mobile-link">Services</a></li>
+        <li><a href="approach.html" class="mobile-link">Approach</a></li>
+        <li><a href="team.html"     class="mobile-link">Our Team</a></li>
+        <li><a href="contact.html"  class="mobile-link">Contact</a></li>
+      </ul>
+      <a href="book.html" class="btn btn--dark mobile-cta">Book a Call</a>
+    </nav>
+  </div>
+
+
+  <!-- ============================================================
+       HERO — Full-screen video background (Greensward style)
+       Headline anchored to bottom-left, dark gradient overlay
+       ============================================================ -->
+  <section class="hero-video" id="hero" aria-label="Hero">
+
+    <!-- VIDEO BACKGROUND -->
+    <video
+      class="hero-video__bg"
+      autoplay muted loop playsinline
+      aria-hidden="true"
+    >
+      <source src="assets/videos/8347695-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Dark gradient overlay (heavier at bottom) -->
+    <div class="hero-video__overlay" aria-hidden="true"></div>
+
+    <!-- Content anchored bottom-left -->
+    <div class="hero-video__content">
+      <p class="eyebrow eyebrow--light animate-hero" style="animation-delay:0.3s;">
+        EST. 2026 &mdash; ADELAIDE
+      </p>
+      <h1 class="hero-video__headline animate-hero" style="animation-delay:0.6s;">
+        Intelligence<br />built on<br />heritage.
+      </h1>
+      <p class="hero-video__subhead animate-hero" style="animation-delay:0.9s;">
+        We translate complex markets into clear advantage &mdash;
+        for those who understand that knowledge, properly held, is power.
+      </p>
+      <div class="animate-hero" style="animation-delay:1.1s;">
+        <a href="about.html" class="btn btn--outline-white">About Holkam</a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero-video__scroll" aria-hidden="true">
+      <span class="hero-video__scroll-label">Scroll</span>
+      <div class="hero-video__scroll-line"></div>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       MARQUEE STRIP
+       ============================================================ -->
+  <div class="marquee-strip" aria-hidden="true">
+    <!-- Duplicate the marquee__item set for seamless loop -->
+    <div class="marquee__track">
+      <span class="marquee__item">Market Intelligence <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Competitive Analysis <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Strategic Foresight <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Cross-Border Intelligence <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Business Advisory <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Regulatory Foresight <span class="marquee__dot"></span></span>
+      <!-- Duplicate for seamless loop -->
+      <span class="marquee__item">Market Intelligence <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Competitive Analysis <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Strategic Foresight <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Cross-Border Intelligence <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Business Advisory <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Regulatory Foresight <span class="marquee__dot"></span></span>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       EDITORIAL SPLIT — "Why Holkam?" (Emerald Fairways style)
+       Left: large italic headline + vertical rule + numbered features
+       Right: portrait image placeholder
+       ============================================================ -->
+  <section class="editorial-split" id="why">
+
+    <div class="editorial-split__text">
+
+      <!-- Large italic serif headline with left border rule -->
+      <h2 class="editorial-split__headline animate-on-scroll-left">
+        Why<br />Holkam?
+      </h2>
+
+      <!-- Numbered features, same left border as headline -->
+      <div class="editorial-split__features">
+
+        <div class="editorial-feature animate-on-scroll">
+          <span class="editorial-feature__number">01.</span>
+          <h3 class="editorial-feature__title">Unmatched Intelligence Depth</h3>
+          <p class="editorial-feature__body">
+            We go beyond surface-level data. Our intelligence is
+            interpreted, contextualised, and delivered with the
+            precision that consequential decisions demand.
+          </p>
+        </div>
+
+        <div class="editorial-feature animate-on-scroll">
+          <span class="editorial-feature__number">02.</span>
+          <h3 class="editorial-feature__title">Cross-Border Expertise</h3>
+          <p class="editorial-feature__body">
+            Global markets, local insight. We track regulatory shifts,
+            competitive movements, and market opportunities across
+            industries and geographies.
+          </p>
+        </div>
+
+        <div class="editorial-feature animate-on-scroll">
+          <span class="editorial-feature__number">03.</span>
+          <h3 class="editorial-feature__title">Actionable Clarity</h3>
+          <p class="editorial-feature__body">
+            No reports that gather dust. Every briefing is formatted
+            for the reader who must act — precise, readable, decisive.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT: portrait image — young businessman on phone by window -->
+    <!-- USER ASSET: Save your portrait photo as assets/images/businessman-phone.jpg -->
+    <div class="editorial-split__image">
+      <img src="assets/images/businessman-phone.jpg" alt="Strategic advisory" class="fill-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="img-ph" style="display:none;">
+        <p class="img-ph__label">assets/images/<br>businessman-phone.jpg</p>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       VISION / QUOTE — Scattered photos (Greensward style)
+       ============================================================ -->
+  <section class="vision-section" id="vision">
+
+    <!-- Scattered background photos — add your images with the names below -->
+    <div class="vision-section__scattered" aria-hidden="true">
+      <div class="vision-scattered__item vision-scattered__item--1">
+        <img src="assets/Employees%20Together/pexels-yankrukov-7794041.jpg" alt="" class="fill-img" onerror="this.style.display='none';" />
+      </div>
+      <div class="vision-scattered__item vision-scattered__item--2">
+        <img src="assets/Employees%20Together/pexels-kampus-8475204.jpg" alt="" class="fill-img" onerror="this.style.display='none';" />
+      </div>
+      <div class="vision-scattered__item vision-scattered__item--3">
+        <img src="assets/Employees%20Together/pexels-anthony-dalesandro-1601290757-34164498.jpg" alt="" class="fill-img" onerror="this.style.display='none';" />
+      </div>
+      <div class="vision-scattered__item vision-scattered__item--4">
+        <img src="assets/Employees%20Together/pexels-yankrukov-8837169.jpg" alt="" class="fill-img" onerror="this.style.display='none';" />
+      </div>
+      <div class="vision-scattered__item vision-scattered__item--5">
+        <img src="assets/Employees%20Together/Sydbank%20Private.jpg" alt="" class="fill-img" onerror="this.style.display='none';" />
+      </div>
+      <div class="vision-scattered__item vision-scattered__item--6">
+        <img src="assets/Employees%20Together/pexels-henri-mathieu-8349432.jpg" alt="" class="fill-img" onerror="this.style.display='none';" />
+      </div>
+    </div>
+
+    <!-- Centered content -->
+    <div class="vision-section__content">
+      <p class="eyebrow animate-on-scroll">VISION</p>
+      <blockquote class="vision-section__quote animate-on-scroll">
+        The purpose here is continuity. Intelligence is approached
+        as something sustained over time, not refreshed for effect.
+      </blockquote>
+      <em class="vision-section__signature animate-on-scroll">Holkam Advisory</em>
+      <a href="about.html" class="vision-section__link animate-on-scroll">
+        About the firm
+      </a>
+    </div>
+
+    <!-- Rotating badge -->
+    <div class="vision-badge-wrap" aria-hidden="true">
+      <a href="about.html" class="rotating-badge" aria-label="Read more about Holkam">
+        <svg class="rotating-badge__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <path id="badgePath" d="M 50,50 m -36,0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0"/>
+          </defs>
+          <text font-family="Inter, sans-serif" font-size="8.5" letter-spacing="2.2" fill="rgba(26,26,26,0.45)">
+            <textPath href="#badgePath">VIEW MORE • VIEW MORE • VIEW MORE •</textPath>
+          </text>
+        </svg>
+        <span class="rotating-badge__icon">&#8594;</span>
+      </a>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       SERVICES PREVIEW — Dark numbered cards
+       ============================================================ -->
+  <section class="services-preview" id="services">
+    <div class="container">
+      <p class="eyebrow eyebrow--light animate-on-scroll">OUR SERVICES</p>
+      <h2 class="section-headline section-headline--light animate-on-scroll">
+        What we deliver
+      </h2>
+
+      <div class="services-preview__grid">
+
+        <div class="services-preview__card animate-on-scroll">
+          <span class="services-preview__num">01</span>
+          <h3 class="services-preview__title">Market Intelligence</h3>
+          <p class="services-preview__body">
+            Deep-horizon research that maps competitive terrain,
+            identifies structural shifts, and surfaces opportunity
+            before it becomes consensus.
+          </p>
+          <a href="services.html#market" class="services-preview__link">
+            Learn more &rarr;
+          </a>
+        </div>
+
+        <div class="services-preview__card animate-on-scroll">
+          <span class="services-preview__num">02</span>
+          <h3 class="services-preview__title">Competitive Analysis</h3>
+          <p class="services-preview__body">
+            Systematic assessment of competitor strategy, capability,
+            and intent — translated into intelligence your leadership
+            can act on with confidence.
+          </p>
+          <a href="services.html#competitive" class="services-preview__link">
+            Learn more &rarr;
+          </a>
+        </div>
+
+        <div class="services-preview__card animate-on-scroll">
+          <span class="services-preview__num">03</span>
+          <h3 class="services-preview__title">Strategic Foresight</h3>
+          <p class="services-preview__body">
+            Scenario planning and horizon scanning for organisations
+            with the discipline to act on tomorrow's intelligence
+            today.
+          </p>
+          <a href="services.html#foresight" class="services-preview__link">
+            Learn more &rarr;
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT US — Dark, story-driven narrative
+       ============================================================ -->
+  <section class="about-story" id="story">
+    <div class="container">
+      <div class="about-story__grid">
+
+        <div class="about-story__text animate-on-scroll-left">
+          <p class="eyebrow eyebrow--light">OUR STORY</p>
+          <h2 class="about-story__headline">Built for<br />Business Leaders.</h2>
+          <p class="about-story__sub">
+            We started Holkam Advisory because business owners deserve better intelligence.
+          </p>
+          <p class="about-story__body">
+            Too many business owners operate reactively. Markets shift. Competitors move.
+            Regulations change. But they&rsquo;re always one step behind.
+          </p>
+          <p class="about-story__body">
+            We built Holkam on a simple belief: strategic intelligence should be accessible
+            to every business owner who wants to lead with foresight, not reaction. We combine
+            cross-border market insights, regulatory analysis, and competitive intelligence
+            into actionable clarity.
+          </p>
+          <p class="about-story__body">
+            No jargon. No fluff. Just clear, strategic intelligence that helps you see
+            what&rsquo;s coming and act before your competitors do.
+          </p>
+          <a href="mailto:info@holkamadvisory.com?subject=Let's Build Your Strategic Advantage" class="about-story__cta">
+            Ready to lead with intelligence? &rarr;
+          </a>
+        </div>
+
+        <!-- USER ASSET: Save founder/team photo as assets/images/about-story.jpg -->
+        <div class="about-story__image animate-on-scroll">
+          <img src="assets/images/about-story.jpg" alt="Holkam Advisory" class="fill-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="img-ph" style="display:none;">
+            <p class="img-ph__label">assets/images/<br>about-story.jpg<br><br>Founder / team photo<br>500 × 600 px portrait</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       INSIGHTS & ARTICLES — Thought leadership, 3 cards
+       ============================================================ -->
+  <section class="insights-section" id="insights">
+    <div class="container">
+      <p class="eyebrow eyebrow--light animate-on-scroll">THOUGHT LEADERSHIP</p>
+      <h2 class="section-headline section-headline--light animate-on-scroll">Strategic Insights</h2>
+      <p class="section-subhead animate-on-scroll" style="color:rgba(255,255,255,0.45);">
+        Trends, regulations, and market movements that affect service-based businesses.
+      </p>
+
+      <div class="insights-grid">
+
+        <a href="article-1.html" class="article-card animate-on-scroll">
+          <div class="article-card__img">
+            <img src="assets/images/article-hero-1.jpg" alt="Regulatory Changes Affecting Law Firms in 2026" onerror="this.style.display='none';" />
+            <span class="article-card__cat">Compliance</span>
+          </div>
+          <div class="article-card__body">
+            <h3 class="article-card__title">Regulatory Changes Affecting Law Firms in 2026</h3>
+            <p class="article-card__excerpt">
+              A breakdown of the latest regulatory shifts impacting legal practices. Understanding
+              these changes early gives you competitive advantage in client communication.
+            </p>
+            <div class="article-card__footer">
+              <span class="article-card__meta">May 16, 2026 &middot; 7 min read</span>
+              <span class="article-card__link">Read more &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="article-2.html" class="article-card animate-on-scroll">
+          <div class="article-card__img">
+            <img src="assets/images/article-hero-2.jpg" alt="How Australian Legal Tech is Reshaping the Industry" onerror="this.style.display='none';" />
+            <span class="article-card__cat">Market Intelligence</span>
+          </div>
+          <div class="article-card__body">
+            <h3 class="article-card__title">How Australian Legal Tech is Reshaping the Industry</h3>
+            <p class="article-card__excerpt">
+              Australian legal firms adopted AI and automation 2&ndash;3 years before most markets.
+              Here&rsquo;s what&rsquo;s coming &mdash; and how to prepare before it becomes consensus.
+            </p>
+            <div class="article-card__footer">
+              <span class="article-card__meta">May 12, 2026 &middot; 6 min read</span>
+              <span class="article-card__link">Read more &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="article-3.html" class="article-card animate-on-scroll">
+          <div class="article-card__img">
+            <img src="assets/images/article-hero-3.jpg" alt="The Client Retention Crisis: Why Service Firms Are Losing Ground" onerror="this.style.display='none';" />
+            <span class="article-card__cat">Strategy</span>
+          </div>
+          <div class="article-card__body">
+            <h3 class="article-card__title">The Client Retention Crisis: Why Service Firms Are Losing Ground</h3>
+            <p class="article-card__excerpt">
+              Client expectations are shifting faster than ever. We break down the trends and
+              show where the real opportunities are for service-based businesses that move first.
+            </p>
+            <div class="article-card__footer">
+              <span class="article-card__meta">May 8, 2026 &middot; 8 min read</span>
+              <span class="article-card__link">Read more &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <div style="text-align:center; margin-top: var(--space-64);">
+        <a href="articles.html" class="btn btn--outline-white">View All Articles</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       WHY CHOOSE HOLKAM — 5-card trust section
+       ============================================================ -->
+  <section class="why-holkam" id="why-holkam">
+    <div class="why-holkam__inner">
+      <p class="eyebrow animate-on-scroll">WHY CHOOSE HOLKAM</p>
+      <h2 class="why-holkam__headline animate-on-scroll">
+        The standard others<br /><em>measure themselves against.</em>
+      </h2>
+      <div class="why-holkam__grid">
+
+        <div class="why-card animate-on-scroll">
+          <div class="why-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="why-card__title">Verified Data Sources</h3>
+          <p class="why-card__desc">Every intelligence brief is grounded in verified, primary sources — government registers, official filings, licensed databases. No speculation passed off as insight.</p>
+        </div>
+
+        <div class="why-card animate-on-scroll">
+          <div class="why-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3 class="why-card__title">Accuracy First</h3>
+          <p class="why-card__desc">We do not publish until the analysis holds. Our outputs are reviewed for precision and consistency — because a single error costs more than the engagement is worth.</p>
+        </div>
+
+        <div class="why-card animate-on-scroll">
+          <div class="why-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20M2 12l6-6M2 12l6 6M22 12l-6-6M22 12l-6 6"/></svg>
+          </div>
+          <h3 class="why-card__title">Strategic Foresight</h3>
+          <p class="why-card__desc">Our work looks forward, not backward. We map emerging signals, regulatory shifts, and market dynamics so clients act before the window closes.</p>
+        </div>
+
+        <div class="why-card animate-on-scroll">
+          <div class="why-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h3M19 12h3M12 2v3M12 19v3"/><path d="M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M19.07 4.93l-2.12 2.12M7.05 16.95l-2.12 2.12"/></svg>
+          </div>
+          <h3 class="why-card__title">Cross-Border Intelligence</h3>
+          <p class="why-card__desc">Operating across Australia and Southern Africa, we understand the regulatory, cultural, and commercial nuances that determine success in both markets.</p>
+        </div>
+
+        <div class="why-card animate-on-scroll">
+          <div class="why-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3 class="why-card__title">Confidential Partnership</h3>
+          <p class="why-card__desc">Every engagement operates under strict confidentiality. Sensitive work demands a trusted partner — and that trust is earned through absolute discretion, every time.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       VERIFIED NEWS SOURCES — auto-scrolling logo carousel
+       ============================================================ -->
+  <section class="news-sources" id="data-sources">
+    <div class="news-sources__inner">
+      <p class="eyebrow eyebrow--light animate-on-scroll">VERIFIED NEWS SOURCES</p>
+      <h2 class="news-sources__headline animate-on-scroll">
+        Intelligence drawn from<br /><em>authoritative media.</em>
+      </h2>
+      <p class="news-sources__sub animate-on-scroll">
+        Our analysis draws on verified, reputable news platforms — so every brief
+        is grounded in what the market is actually saying.
+      </p>
+    </div>
+
+    <div class="news-carousel" aria-label="Verified news sources">
+      <div class="news-carousel__track">
+        <!-- Set 1 -->
+        <div class="news-carousel__item"><img src="assets/News%20Platforms/News24_(website)_logo.svg" alt="News24" /></div>
+        <div class="news-carousel__item"><img src="assets/News%20Platforms/DM.png" alt="Daily Maverick" /></div>
+        <div class="news-carousel__item"><img src="assets/News%20Platforms/ABC_News_logo_2021.svg.png" alt="ABC News" /></div>
+        <div class="news-carousel__item"><img src="assets/News%20Platforms/Newzroom_Afrika.png" alt="Newzroom Afrika" /></div>
+        <div class="news-carousel__item"><img src="assets/News%20Platforms/ENCA_logo.svg.png" alt="eNCA" class="logo--on-white" /></div>
+        <div class="news-carousel__item"><img src="assets/News%20Platforms/SABC%20Logo%20(Final).png" alt="SABC" /></div>
+        <div class="news-carousel__item"><img src="assets/News%20Platforms/Migraine-treatment-melbourne-headache-centre-seven-news_1.webp" alt="7 News" /></div>
+        <!-- Set 2 — exact duplicate for seamless loop -->
+        <div class="news-carousel__item" aria-hidden="true"><img src="assets/News%20Platforms/News24_(website)_logo.svg" alt="" /></div>
+        <div class="news-carousel__item" aria-hidden="true"><img src="assets/News%20Platforms/DM.png" alt="" /></div>
+        <div class="news-carousel__item" aria-hidden="true"><img src="assets/News%20Platforms/ABC_News_logo_2021.svg.png" alt="" /></div>
+        <div class="news-carousel__item" aria-hidden="true"><img src="assets/News%20Platforms/Newzroom_Afrika.png" alt="" /></div>
+        <div class="news-carousel__item" aria-hidden="true"><img src="assets/News%20Platforms/ENCA_logo.svg.png" alt="" class="logo--on-white" /></div>
+        <div class="news-carousel__item" aria-hidden="true"><img src="assets/News%20Platforms/south-african-broadcasting-corporation-sabc-1-sabc-2-logo-news-anchor-on-tv-breaking-news.jpg" alt="" class="logo--on-white" /></div>
+        <div class="news-carousel__item" aria-hidden="true"><img src="assets/News%20Platforms/Migraine-treatment-melbourne-headache-centre-seven-news_1.webp" alt="" /></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOUNDER BIO — Horizontal split (photo left, text right)
+       ============================================================ -->
+  <section class="founder-section" id="founder">
+    <div class="founder-section__inner">
+
+      <div class="founder-section__photo animate-on-scroll">
+        <img src="assets/images/boipelo.jpg" alt="Boipelo Ntsoane, Founder of Holkam Advisory" class="founder-section__img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="img-ph founder-section__img-ph" style="display:none;">
+          <p class="img-ph__label">Boipelo Ntsoane<br>Founder</p>
+        </div>
+      </div>
+
+      <div class="founder-section__text">
+        <h2 class="founder-section__headline animate-on-scroll-left">
+          Why <em>We Built</em><br />Holkam Advisory
+        </h2>
+
+        <div class="founder-section__bio animate-on-scroll">
+          <p>
+            Most intelligence firms produce volume &mdash; reports that document what has already
+            happened, dressed in the language of foresight. We built Holkam because business owners
+            deserve something different: intelligence that is precise, forward-looking, and built
+            around a single question. What does your leadership need to know right now?
+          </p>
+          <p>
+            I am currently studying Computer Science and hold a certification in IT Management.
+            That foundation shapes how we approach every engagement &mdash; combining technical
+            rigour with strategic clarity to deliver intelligence that is not just accurate,
+            but immediately actionable.
+          </p>
+        </div>
+
+        <div class="founder-section__signature animate-on-scroll">
+          <img src="assets/signature.png" alt="Boipelo Ntsoane" class="founder-section__sig-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="founder-section__sig-text" style="display:none;">Boipelo Ntsoane</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PANORAMIC STRIP — Full-width video with text overlay
+       ============================================================ -->
+  <section class="panoramic-strip panoramic-strip--video">
+    <video
+      class="panoramic-strip__video"
+      autoplay muted loop playsinline
+      aria-hidden="true"
+    >
+      <source src="assets/videos/Vid-2.mp4" type="video/mp4" />
+    </video>
+    <div class="panoramic-strip__overlay">
+      <h2 class="panoramic-strip__headline animate-on-scroll">
+        Clarity in markets others find opaque.
+      </h2>
+      <a href="contact.html" class="btn btn--outline-white animate-on-scroll">
+        Begin a Conversation
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER — Enhanced with legal pages, social, contact
+       ============================================================ -->
+  <footer class="site-footer-enhanced" role="contentinfo">
+    <div class="footer-main container">
+      <div class="footer-grid">
+
+        <div class="footer-col footer-col--brand">
+          <a href="index.html" class="footer-logo" aria-label="Holkam Advisory — home">
+            <img src="assets/logo.png" alt="Holkam Advisory" class="footer-logo__img" />
+          </a>
+          <p class="footer-tagline"><em>Intelligence built on heritage.</em></p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="approach.html">Approach</a></li>
+            <li><a href="#insights">Insights</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Legal</h4>
+          <ul class="footer-links-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Connect</h4>
+          <a href="mailto:info@holkamadvisory.com" class="footer-email-link">
+            info@holkamadvisory.com
+          </a>
+          <p class="footer-location">Adelaide, Australia &bull; Pretoria, South Africa</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/boipelo-ntsoane-4896b634a/" target="_blank" rel="noopener noreferrer" class="footer-social__link" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social__link" aria-label="X / Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="container footer-bar__inner">
+        <p class="footer-bar__copy">&copy; 2026 Holkam Advisory (Pty) Ltd. All rights reserved.</p>
+        <div class="footer-bar__legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <span>&middot;</span>
+          <a href="terms.html">Terms of Service</a>
+          <span>&middot;</span>
+          <a href="cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

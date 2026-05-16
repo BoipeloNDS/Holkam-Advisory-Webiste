@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Holkam Advisory — begin a conversation about your strategic intelligence needs." />
+  <meta property="og:title" content="Contact — Holkam Advisory" />
+  <meta property="og:type"  content="website" />
+  <title>Contact — Holkam Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+
+  <style>
+    /* Contact page overrides */
+    body {
+      background-color: var(--color-dark);
+    }
+
+    .contact-section__video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-nav site-nav--inverted" id="site-nav" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <ul class="nav-links nav-links--left" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="approach.html">Approach</a></li>
+      </ul>
+      <a href="index.html" class="nav-logo" aria-label="Holkam Advisory — home">
+        <img src="assets/logo.png" alt="Holkam Advisory" class="nav-logo__img" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+        <span class="nav-logo__wordmark" style="display:none;">
+          <span class="nav-logo__text">HOLKAM</span>
+          <span class="nav-logo__sub">EST. 2026 — ADELAIDE</span>
+        </span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links nav-links--right" role="list">
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <a href="book.html" class="btn btn--outline nav-cta">Book a Call</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="mobile-menu__overlay" id="mobile-overlay"></div>
+    <nav class="mobile-menu__drawer">
+      <button class="mobile-menu__close" id="mobile-close" aria-label="Close menu">&times;</button>
+      <ul role="list">
+        <li><a href="index.html"    class="mobile-link">Home</a></li>
+        <li><a href="about.html"    class="mobile-link">About</a></li>
+        <li><a href="services.html" class="mobile-link">Services</a></li>
+        <li><a href="approach.html" class="mobile-link">Approach</a></li>
+        <li><a href="contact.html"  class="mobile-link active">Contact</a></li>
+      </ul>
+      <a href="book.html" class="btn btn--dark mobile-cta">Book a Call</a>
+    </nav>
+  </div>
+
+
+  <!-- ============================================================
+       CONTACT — Full-screen dark with background photo
+       USER ASSET: Save B&W city window photo as assets/images/city-window.jpg
+       ============================================================ -->
+  <section class="contact-section" id="contact">
+
+    <!-- Full-screen video background -->
+    <video
+      class="contact-section__video"
+      autoplay muted loop playsinline
+      aria-hidden="true"
+    >
+      <source src="assets/videos/Vid-3.mp4" type="video/mp4" />
+    </video>
+
+    <div class="contact-section__overlay"></div>
+
+    <div class="contact-section__content">
+      <p class="eyebrow eyebrow--light animate-hero" style="animation-delay:0.3s;">
+        HOLKAM ADVISORY
+      </p>
+      <h1 class="contact-section__headline animate-hero" style="animation-delay:0.55s;">
+        Let&rsquo;s talk.
+      </h1>
+      <p class="contact-section__sub animate-hero" style="animation-delay:0.8s;">
+        Tell us about your strategic intelligence needs. We&rsquo;ll
+        respond within one business day to arrange a consultation.
+      </p>
+      <div class="animate-hero" style="animation-delay:1.0s;">
+        <a
+          href="mailto:info@holkamadvisory.com?subject=Strategic Intelligence Enquiry"
+          class="contact-email"
+        >
+          info@holkamadvisory.com
+        </a>
+      </div>
+      <p class="contact-section__detail animate-hero" style="animation-delay:1.2s;">
+        Adelaide, Australia &nbsp;&bull;&nbsp; Global reach<br />
+        Enquiries handled with strict confidentiality
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       MARQUEE STRIP (subtle — at the base of the contact page)
+       ============================================================ -->
+  <div class="marquee-strip" aria-hidden="true" style="border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="marquee__track">
+      <span class="marquee__item">Market Intelligence <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Competitive Analysis <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Strategic Foresight <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Cross-Border Intelligence <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Business Advisory <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Regulatory Foresight <span class="marquee__dot"></span></span>
+      <!-- Duplicate for loop -->
+      <span class="marquee__item">Market Intelligence <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Competitive Analysis <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Strategic Foresight <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Cross-Border Intelligence <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Business Advisory <span class="marquee__dot"></span></span>
+      <span class="marquee__item">Regulatory Foresight <span class="marquee__dot"></span></span>
+    </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer-enhanced" role="contentinfo">
+    <div class="footer-main container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col--brand">
+          <a href="index.html" class="footer-logo" aria-label="Holkam Advisory — home">
+            <img src="assets/logo.png" alt="Holkam Advisory" class="footer-logo__img" />
+          </a>
+          <p class="footer-tagline"><em>Intelligence built on heritage.</em></p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="approach.html">Approach</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Legal</h4>
+          <ul class="footer-links-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Connect</h4>
+          <a href="mailto:info@holkamadvisory.com" class="footer-email-link">info@holkamadvisory.com</a>
+          <p class="footer-location">Adelaide, Australia &bull; Pretoria, South Africa</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/boipelo-ntsoane-4896b634a/" target="_blank" rel="noopener noreferrer" class="footer-social__link" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social__link" aria-label="X / Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="container footer-bar__inner">
+        <p class="footer-bar__copy">&copy; 2026 Holkam Advisory (Pty) Ltd. All rights reserved.</p>
+        <div class="footer-bar__legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <span>&middot;</span>
+          <a href="terms.html">Terms of Service</a>
+          <span>&middot;</span>
+          <a href="cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

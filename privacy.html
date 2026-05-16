@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Privacy Policy — Holkam Advisory" />
+  <meta name="robots" content="noindex" />
+  <title>Privacy Policy — Holkam Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+
+  <style>
+    body { background-color: var(--color-black); }
+
+    .legal-page {
+      min-height: 100vh;
+      padding-top: calc(var(--nav-height) + var(--space-80));
+      padding-bottom: var(--space-120);
+    }
+
+    .legal-page__inner {
+      max-width: 780px;
+      margin-inline: auto;
+      padding-inline: var(--space-48);
+    }
+
+    .legal-page__back {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-8);
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: var(--space-64);
+      transition: color var(--transition-base);
+    }
+    .legal-page__back:hover { color: rgba(255, 255, 255, 0.75); }
+
+    .legal-page__eyebrow {
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: var(--space-16);
+    }
+
+    .legal-page__title {
+      font-family: var(--font-display);
+      font-size: var(--text-5xl);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--color-white);
+      line-height: 1.1;
+      margin-bottom: var(--space-16);
+    }
+
+    .legal-page__date {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      letter-spacing: 0.12em;
+      color: rgba(255, 255, 255, 0.3);
+      margin-bottom: var(--space-64);
+      display: block;
+    }
+
+    .legal-page__divider {
+      width: 48px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.12);
+      margin-bottom: var(--space-64);
+    }
+
+    .legal-content h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 500;
+      color: var(--color-white);
+      margin-top: var(--space-64);
+      margin-bottom: var(--space-24);
+    }
+
+    .legal-content p {
+      font-family: var(--font-body);
+      font-size: var(--text-xl);
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.85;
+      margin-bottom: var(--space-24);
+    }
+
+    .legal-content a {
+      color: rgba(255, 255, 255, 0.75);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: color var(--transition-fast), border-color var(--transition-fast);
+    }
+    .legal-content a:hover {
+      color: var(--color-white);
+      border-color: var(--color-white);
+    }
+
+    @media (max-width: 768px) {
+      .legal-page__inner { padding-inline: var(--space-24); }
+      .legal-page__title { font-size: var(--text-4xl); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-nav site-nav--inverted" id="site-nav" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <ul class="nav-links nav-links--left" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="approach.html">Approach</a></li>
+      </ul>
+      <a href="index.html" class="nav-logo" aria-label="Holkam Advisory — home">
+        <img src="assets/logo.png" alt="Holkam Advisory" class="nav-logo__img" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+        <span class="nav-logo__wordmark" style="display:none;">
+          <span class="nav-logo__text">HOLKAM</span>
+          <span class="nav-logo__sub">EST. 2026 — ADELAIDE</span>
+        </span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links nav-links--right" role="list">
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="book.html" class="btn btn--outline nav-cta">Book a Call</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="mobile-menu__overlay" id="mobile-overlay"></div>
+    <nav class="mobile-menu__drawer">
+      <button class="mobile-menu__close" id="mobile-close" aria-label="Close menu">&times;</button>
+      <ul role="list">
+        <li><a href="index.html"    class="mobile-link">Home</a></li>
+        <li><a href="about.html"    class="mobile-link">About</a></li>
+        <li><a href="services.html" class="mobile-link">Services</a></li>
+        <li><a href="approach.html" class="mobile-link">Approach</a></li>
+        <li><a href="team.html"     class="mobile-link">Our Team</a></li>
+        <li><a href="contact.html"  class="mobile-link">Contact</a></li>
+      </ul>
+      <a href="book.html" class="btn btn--dark mobile-cta">Book a Call</a>
+    </nav>
+  </div>
+
+
+  <main class="legal-page">
+    <div class="legal-page__inner">
+      <a href="index.html" class="legal-page__back">&larr; Back to Holkam Advisory</a>
+
+      <p class="eyebrow eyebrow--light legal-page__eyebrow">LEGAL</p>
+      <h1 class="legal-page__title">Privacy Policy.</h1>
+      <span class="legal-page__date">Last updated: May 2026</span>
+      <div class="legal-page__divider"></div>
+
+      <div class="legal-content">
+        <p>
+          This Privacy Policy describes how Holkam Advisory (Pty) Ltd (&ldquo;Holkam Advisory&rdquo;,
+          &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) collects, uses, and protects
+          your personal information when you visit holkamadvisory.com or engage with our services.
+        </p>
+
+        <h2>Information We Collect</h2>
+        <p>
+          This website collects minimal personal data. When you contact us via our enquiry form or
+          email, we collect your name and email address for the sole purpose of responding to your
+          consultation request. We do not collect payment information, and we do not require account
+          creation to access our website.
+        </p>
+        <p>
+          We may use standard analytics tools (such as Google Analytics) to understand how visitors
+          interact with our website. This data is aggregated and anonymised — it does not identify
+          you personally.
+        </p>
+
+        <h2>How We Use Your Information</h2>
+        <p>
+          Any information you provide when contacting us is used exclusively to follow up on your
+          enquiry and arrange a consultation. We will never use your contact details for unsolicited
+          marketing, and we will not sell, rent, or share your personal information with third
+          parties without your explicit consent.
+        </p>
+
+        <h2>Data Security</h2>
+        <p>
+          We apply industry-standard security practices to protect any information you share with us.
+          All electronic communications are transmitted over encrypted connections. Client
+          relationships and intelligence are held in strict confidence as a matter of professional
+          principle, not merely legal obligation.
+        </p>
+
+        <h2>Third-Party Services</h2>
+        <p>
+          Our website may use Google Fonts (loaded from Google servers) and Google Analytics. These
+          services are governed by their own privacy policies. We do not sell your data to any
+          third-party advertising networks.
+        </p>
+
+        <h2>Your Rights</h2>
+        <p>
+          You have the right to request access to, correction of, or deletion of any personal
+          information we hold about you. To exercise these rights, contact us at
+          <a href="mailto:info@holkamadvisory.com">info@holkamadvisory.com</a>.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          For any privacy-related questions, please contact us at
+          <a href="mailto:info@holkamadvisory.com">info@holkamadvisory.com</a>.<br />
+          Holkam Advisory (Pty) Ltd, Adelaide, South Australia, Australia.
+        </p>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer-enhanced" role="contentinfo">
+    <div class="footer-main container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col--brand">
+          <a href="index.html" class="footer-logo" aria-label="Holkam Advisory — home">
+            <img src="assets/logo.png" alt="Holkam Advisory" class="footer-logo__img" />
+          </a>
+          <p class="footer-tagline"><em>Intelligence built on heritage.</em></p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="approach.html">Approach</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Legal</h4>
+          <ul class="footer-links-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Connect</h4>
+          <a href="mailto:info@holkamadvisory.com" class="footer-email-link">info@holkamadvisory.com</a>
+          <p class="footer-location">Adelaide, Australia &bull; Pretoria, South Africa</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="container footer-bar__inner">
+        <p class="footer-bar__copy">&copy; 2026 Holkam Advisory (Pty) Ltd. All rights reserved.</p>
+        <div class="footer-bar__legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <span>&middot;</span>
+          <a href="terms.html">Terms of Service</a>
+          <span>&middot;</span>
+          <a href="cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book a Consultation — Holkam Advisory. Schedule a 30-minute strategy call with our team." />
+  <title>Book a Consultation — Holkam Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <style>
+    body { background-color: var(--color-black); }
+
+    .book-page {
+      padding-top: calc(var(--nav-height) + var(--space-64));
+      padding-bottom: var(--space-120);
+    }
+
+    .book-header {
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: var(--space-80);
+      padding-bottom: var(--space-64);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-80);
+      align-items: start;
+    }
+
+    .book-header__left {}
+
+    .book-header__eyebrow {
+      color: rgba(255,255,255,0.35);
+      margin-bottom: var(--space-16);
+    }
+
+    .book-header__title {
+      font-family: var(--font-display);
+      font-size: var(--text-5xl);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--color-white);
+      line-height: 1.1;
+      margin-bottom: var(--space-32);
+    }
+
+    .book-header__sub {
+      font-family: var(--font-body);
+      font-size: var(--text-xl);
+      color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+      margin-bottom: var(--space-48);
+    }
+
+    .book-what {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-16);
+      margin-bottom: var(--space-48);
+    }
+
+    .book-what li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-16);
+      font-family: var(--font-body);
+      font-size: var(--text-xl);
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+    }
+
+    .book-what li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      flex-shrink: 0;
+      margin-top: 9px;
+    }
+
+    .book-details {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-24);
+    }
+
+    .book-detail {
+      display: flex;
+      align-items: center;
+      gap: var(--space-16);
+      padding: var(--space-20) var(--space-24);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+    }
+
+    .book-detail__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      flex-shrink: 0;
+    }
+
+    .book-detail__label {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 4px;
+    }
+
+    .book-detail__value {
+      font-family: var(--font-ui);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-white);
+    }
+
+    /* Calendly section */
+    .book-calendly {
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: var(--space-80);
+    }
+
+    .book-calendly__divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.07);
+      margin-bottom: var(--space-64);
+    }
+
+    .book-calendly__label {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: var(--space-32);
+      text-align: center;
+    }
+
+    .book-calendly__widget {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* Calendly dark mode override */
+    .calendly-inline-widget {
+      min-width: 320px;
+      height: 700px;
+    }
+
+    @media (max-width: 1024px) {
+      .book-header { grid-template-columns: 1fr; gap: var(--space-48); padding-inline: var(--space-48); }
+      .book-calendly { padding-inline: var(--space-48); }
+    }
+
+    @media (max-width: 768px) {
+      .book-header { padding-inline: var(--space-24); }
+      .book-header__title { font-size: var(--text-4xl); }
+      .book-calendly { padding-inline: var(--space-24); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-nav site-nav--inverted" id="site-nav" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <ul class="nav-links nav-links--left" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="approach.html">Approach</a></li>
+      </ul>
+      <a href="index.html" class="nav-logo" aria-label="Holkam Advisory — home">
+        <img src="assets/logo.png" alt="Holkam Advisory" class="nav-logo__img" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+        <span class="nav-logo__wordmark" style="display:none;">
+          <span class="nav-logo__text">HOLKAM</span>
+          <span class="nav-logo__sub">EST. 2026 — ADELAIDE</span>
+        </span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links nav-links--right" role="list">
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="book.html" class="btn btn--outline active nav-cta">Book a Call</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="mobile-menu__overlay" id="mobile-overlay"></div>
+    <nav class="mobile-menu__drawer">
+      <button class="mobile-menu__close" id="mobile-close" aria-label="Close menu">&times;</button>
+      <ul role="list">
+        <li><a href="index.html"    class="mobile-link">Home</a></li>
+        <li><a href="about.html"    class="mobile-link">About</a></li>
+        <li><a href="services.html" class="mobile-link">Services</a></li>
+        <li><a href="approach.html" class="mobile-link">Approach</a></li>
+        <li><a href="team.html"     class="mobile-link">Our Team</a></li>
+        <li><a href="contact.html"  class="mobile-link">Contact</a></li>
+      </ul>
+      <a href="book.html" class="btn btn--dark mobile-cta active">Book a Call</a>
+    </nav>
+  </div>
+
+
+  <main class="book-page">
+
+    <!-- HEADER SPLIT -->
+    <div class="book-header">
+
+      <div class="book-header__left">
+        <p class="eyebrow eyebrow--light book-header__eyebrow">BOOK A CONSULTATION</p>
+        <h1 class="book-header__title">Let&rsquo;s talk<br />strategy.</h1>
+        <p class="book-header__sub">
+          Book a 30-minute consultation with Boipelo directly. We will use the time to
+          understand your strategic intelligence needs and determine whether and how Holkam
+          Advisory can help.
+        </p>
+        <ul class="book-what">
+          <li>Understand your current market position and key strategic questions</li>
+          <li>Explore which intelligence products are most relevant to your situation</li>
+          <li>No obligation — we only proceed if there is a clear fit</li>
+          <li>Enquiries handled with strict confidentiality</li>
+        </ul>
+      </div>
+
+      <div class="book-details">
+        <div class="book-detail">
+          <div class="book-detail__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="book-detail__label">Duration</div>
+            <div class="book-detail__value">30 minutes</div>
+          </div>
+        </div>
+        <div class="book-detail">
+          <div class="book-detail__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="book-detail__label">Location</div>
+            <div class="book-detail__value">Video call (link sent on confirmation)</div>
+          </div>
+        </div>
+        <div class="book-detail">
+          <div class="book-detail__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div>
+            <div class="book-detail__label">Availability</div>
+            <div class="book-detail__value">Adelaide &amp; Pretoria time zones</div>
+          </div>
+        </div>
+        <div class="book-detail">
+          <div class="book-detail__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <div class="book-detail__label">With</div>
+            <div class="book-detail__value">Boipelo Ntsoane, Founder</div>
+          </div>
+        </div>
+        <div class="book-detail">
+          <div class="book-detail__icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div>
+            <div class="book-detail__label">Cost</div>
+            <div class="book-detail__value">Complimentary — no obligation</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CALENDLY EMBED -->
+    <div class="book-calendly">
+      <div class="book-calendly__divider"></div>
+      <p class="book-calendly__label">Select a time that works for you</p>
+      <div class="book-calendly__widget">
+        <!-- Calendly inline widget begin -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/boips2005/30min?background_color=0a0a0a&text_color=ffffff&primary_color=ffffff" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget end -->
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer-enhanced" role="contentinfo">
+    <div class="footer-main container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col--brand">
+          <a href="index.html" class="footer-logo" aria-label="Holkam Advisory — home">
+            <img src="assets/logo.png" alt="Holkam Advisory" class="footer-logo__img" />
+          </a>
+          <p class="footer-tagline"><em>Intelligence built on heritage.</em></p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="approach.html">Approach</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Legal</h4>
+          <ul class="footer-links-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Connect</h4>
+          <a href="mailto:info@holkamadvisory.com" class="footer-email-link">info@holkamadvisory.com</a>
+          <p class="footer-location">Adelaide, Australia &bull; Pretoria, South Africa</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/boipelo-ntsoane-4896b634a/" target="_blank" rel="noopener noreferrer" class="footer-social__link" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="container footer-bar__inner">
+        <p class="footer-bar__copy">&copy; 2026 Holkam Advisory (Pty) Ltd. All rights reserved.</p>
+        <div class="footer-bar__legal">
+          <a href="privacy.html">Privacy Policy</a><span>&middot;</span>
+          <a href="terms.html">Terms of Service</a><span>&middot;</span>
+          <a href="cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
