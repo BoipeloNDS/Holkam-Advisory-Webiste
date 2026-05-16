@@ -69,10 +69,15 @@
       .industry-item:nth-child(3n) { border-right: none; }
     }
 
+    @media (max-width: 768px) {
+      .industries-section { padding-block: var(--space-80); }
+    }
+
     @media (max-width: 640px) {
       .industries-grid { grid-template-columns: repeat(2, 1fr); }
       .industry-item:nth-child(3n) { border-right: 1px solid rgba(255,255,255,0.08); }
       .industry-item:nth-child(2n) { border-right: none; }
+      .industry-item { padding: var(--space-24) var(--space-16); }
     }
   </style>
 </head>
@@ -132,7 +137,7 @@
   <section class="page-hero" id="top">
     <video
       class="page-hero__video"
-      autoplay muted loop playsinline
+      autoplay muted loop playsinline preload="none"
       aria-hidden="true"
     >
       <source src="assets/videos/vid-5.mp4" type="video/mp4" />
@@ -294,7 +299,7 @@
 
 
   <section class="cta-band">
-    <video class="cta-band__video" autoplay muted loop playsinline aria-hidden="true">
+    <video class="cta-band__video" autoplay muted loop playsinline preload="none" aria-hidden="true">
       <source src="assets/videos/Vid-8.mp4" type="video/mp4" />
     </video>
     <div class="cta-band__overlay"></div>
