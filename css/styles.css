@@ -492,6 +492,7 @@ a, button  { -webkit-tap-highlight-color: transparent; }
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
+  overflow-y: auto;
   transform: translateX(100%);
   transition: transform var(--transition-slow);
 }
