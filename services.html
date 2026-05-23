@@ -27,7 +27,7 @@
 
     .industries-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1px;
       margin-top: var(--space-64);
       border: 1px solid rgba(255,255,255,0.08);
@@ -45,7 +45,7 @@
       background: rgba(255,255,255,0.04);
     }
 
-    .industry-item:nth-child(4n) { border-right: none; }
+    .industry-item:nth-child(3n) { border-right: none; }
 
     .industry-item__num {
       font-family: var(--font-ui);
@@ -61,16 +61,29 @@
       font-weight: 500;
       color: rgba(255,255,255,0.65);
       transition: color var(--transition-fast);
+      margin-bottom: var(--space-12);
     }
 
     .industry-item:hover .industry-item__name {
       color: var(--color-white);
     }
 
+    .industry-item__desc {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: rgba(255,255,255,0.35);
+      line-height: 1.65;
+      transition: color var(--transition-fast);
+    }
+
+    .industry-item:hover .industry-item__desc {
+      color: rgba(255,255,255,0.55);
+    }
+
     @media (max-width: 1024px) {
-      .industries-grid { grid-template-columns: repeat(3, 1fr); }
-      .industry-item:nth-child(4n) { border-right: 1px solid rgba(255,255,255,0.08); }
-      .industry-item:nth-child(3n) { border-right: none; }
+      .industries-grid { grid-template-columns: repeat(2, 1fr); }
+      .industry-item:nth-child(3n) { border-right: 1px solid rgba(255,255,255,0.08); }
+      .industry-item:nth-child(2n) { border-right: none; }
     }
 
     @media (max-width: 768px) {
@@ -78,10 +91,9 @@
     }
 
     @media (max-width: 640px) {
-      .industries-grid { grid-template-columns: repeat(2, 1fr); }
-      .industry-item:nth-child(3n) { border-right: 1px solid rgba(255,255,255,0.08); }
-      .industry-item:nth-child(2n) { border-right: none; }
-      .industry-item { padding: var(--space-24) var(--space-16); }
+      .industries-grid { grid-template-columns: 1fr; }
+      .industry-item:nth-child(2n) { border-right: 1px solid rgba(255,255,255,0.08); }
+      .industry-item { border-right: none; padding: var(--space-24) var(--space-16); }
     }
   </style>
 </head>
@@ -281,22 +293,36 @@
         Intelligence knows no boundaries
       </h2>
       <div class="industries-grid animate-on-scroll">
-        <div class="industry-item"><div class="industry-item__num">01</div><div class="industry-item__name">Financial Services</div></div>
-        <div class="industry-item"><div class="industry-item__num">02</div><div class="industry-item__name">Private Equity</div></div>
-        <div class="industry-item"><div class="industry-item__num">03</div><div class="industry-item__name">Technology</div></div>
-        <div class="industry-item"><div class="industry-item__num">04</div><div class="industry-item__name">Healthcare</div></div>
-        <div class="industry-item"><div class="industry-item__num">05</div><div class="industry-item__name">Resources &amp; Mining</div></div>
-        <div class="industry-item"><div class="industry-item__num">06</div><div class="industry-item__name">Professional Services</div></div>
-        <div class="industry-item"><div class="industry-item__num">07</div><div class="industry-item__name">Legal</div></div>
-        <div class="industry-item"><div class="industry-item__num">08</div><div class="industry-item__name">Real Estate</div></div>
-        <div class="industry-item"><div class="industry-item__num">09</div><div class="industry-item__name">Manufacturing</div></div>
-        <div class="industry-item"><div class="industry-item__num">10</div><div class="industry-item__name">Agribusiness</div></div>
-        <div class="industry-item"><div class="industry-item__num">11</div><div class="industry-item__name">Family Offices</div></div>
-        <div class="industry-item"><div class="industry-item__num">12</div><div class="industry-item__name">Energy Transition</div></div>
-        <div class="industry-item"><div class="industry-item__num">13</div><div class="industry-item__name">Infrastructure</div></div>
-        <div class="industry-item"><div class="industry-item__num">14</div><div class="industry-item__name">Government &amp; Public Sector</div></div>
-        <div class="industry-item"><div class="industry-item__num">15</div><div class="industry-item__name">Cross-Border Trade</div></div>
-        <div class="industry-item"><div class="industry-item__num">16</div><div class="industry-item__name">Education &amp; Research</div></div>
+        <div class="industry-item">
+          <div class="industry-item__num">01</div>
+          <div class="industry-item__name">Legal</div>
+          <div class="industry-item__desc">Regulatory shifts, cross-border compliance movements, and market intelligence for SA law firms navigating a rapidly evolving legal landscape.</div>
+        </div>
+        <div class="industry-item">
+          <div class="industry-item__num">02</div>
+          <div class="industry-item__name">Financial Services</div>
+          <div class="industry-item__desc">Cross-border capital flow intelligence and regulatory changes affecting financial institutions across Australian and South African markets.</div>
+        </div>
+        <div class="industry-item">
+          <div class="industry-item__num">03</div>
+          <div class="industry-item__name">Professional Services</div>
+          <div class="industry-item__desc">Competitive positioning intelligence and market shifts for advisory, consulting, and accounting firms operating across borders.</div>
+        </div>
+        <div class="industry-item">
+          <div class="industry-item__num">04</div>
+          <div class="industry-item__name">Private Equity</div>
+          <div class="industry-item__desc">Deal flow intelligence, regulatory risk assessment, and market entry analysis for firms with AU-SA exposure.</div>
+        </div>
+        <div class="industry-item">
+          <div class="industry-item__num">05</div>
+          <div class="industry-item__name">Cross-Border Trade</div>
+          <div class="industry-item__desc">Trade regulation, tariff shifts, and market access intelligence for businesses operating between Australia and Southern Africa.</div>
+        </div>
+        <div class="industry-item">
+          <div class="industry-item__num">06</div>
+          <div class="industry-item__name">Government &amp; Public Sector</div>
+          <div class="industry-item__desc">Policy direction, regulatory pipeline intelligence, and procurement shifts across Australian and South African government markets.</div>
+        </div>
       </div>
     </div>
   </section>
