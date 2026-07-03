@@ -155,6 +155,28 @@
 
 
 /* ============================================================
+   MODULE 7 — Insights tag filter (articles.html)
+   ============================================================ */
+(function initArticleFilter() {
+  var buttons = document.querySelectorAll('.articles-filter__btn');
+  var cards   = document.querySelectorAll('.article-listing-card');
+  if (!buttons.length || !cards.length) return;
+
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      buttons.forEach(function(b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      var filter = btn.getAttribute('data-filter');
+      cards.forEach(function(card) {
+        var match = filter === 'all' || card.getAttribute('data-tag') === filter;
+        card.classList.toggle('is-hidden', !match);
+      });
+    });
+  });
+})();
+
+
+/* ============================================================
    MODULE 8 — Active nav link highlight
    Matches current page filename to nav links.
    ============================================================ */

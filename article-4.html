@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Market intelligence briefing: a Mississippi federal court cancelled a trial and disqualified four attorneys over AI-hallucinated citations in June 2026. What that means for firms without a compliance department, plus a one-page pre-filing verification checklist." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title"       content="The Verification Problem, Not the AI Problem | Holkam Advisory" />
+  <meta property="og:description" content="A Mississippi court cancelled a trial and disqualified four attorneys over AI-hallucinated citations. The fix costs nothing and fits in one sentence." />
+  <meta property="og:type"        content="article" />
+  <meta property="og:url"         content="https://holkamadvisory.com/article-4.html" />
+  <meta property="og:image"        content="https://holkamadvisory.com/assets/images/og/article-4.jpg" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card"  content="summary_large_image" />
+  <meta name="twitter:image" content="https://holkamadvisory.com/assets/images/og/article-4.jpg" />
+  <title>The Verification Problem, Not the AI Problem | Holkam Advisory</title>
+  <link rel="canonical" href="https://holkamadvisory.com/article-4.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <style>
+    body { background-color: var(--color-black); }
+    .article-hero { position: relative; min-height: 520px; display: flex; flex-direction: column; justify-content: flex-end; background-image: url('assets/images/gherkin.jpg'); background-size: cover; background-position: center; padding: var(--space-80) var(--space-80) var(--space-64); }
+    .article-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.85) 100%); z-index: 0; }
+    .article-hero__content { position: relative; z-index: 1; max-width: 860px; }
+    .article-hero__cat { display: inline-block; font-family: var(--font-ui); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-white); background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); padding: 5px 14px; border-radius: 20px; margin-bottom: var(--space-24); }
+    .article-hero__title { font-family: var(--font-ui); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; color: var(--color-white); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: var(--space-16); }
+    .article-hero__meta { font-family: var(--font-ui); font-size: var(--text-sm); color: rgba(255,255,255,0.6); display: flex; align-items: center; gap: var(--space-8); }
+    .article-hero__meta-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,0.4); }
+    .article-body-wrapper { max-width: 780px; margin-inline: auto; padding: var(--space-64) var(--space-48) var(--space-120); }
+    .article-author { display: flex; align-items: center; gap: var(--space-16); padding-bottom: var(--space-32); border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: var(--space-32); }
+    .article-author__avatar { width: 52px; height: 52px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+    .article-author__avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .article-author__info { flex: 1; }
+    .article-author__name { font-family: var(--font-ui); font-size: var(--text-sm); font-weight: 600; color: var(--color-white); display: block; }
+    .article-author__role { font-family: var(--font-ui); font-size: var(--text-xs); color: rgba(255,255,255,0.45); }
+    .article-author__actions { display: flex; align-items: center; gap: var(--space-12); }
+    .article-author__action { width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.45); transition: color var(--transition-fast), border-color var(--transition-fast); cursor: pointer; background: none; }
+    .article-author__action:hover { color: var(--color-white); border-color: rgba(255,255,255,0.4); }
+    .article-back { display: inline-flex; align-items: center; gap: var(--space-8); font-family: var(--font-ui); font-size: var(--text-xs); letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: var(--space-48); transition: color var(--transition-base); }
+    .article-back:hover { color: rgba(255,255,255,0.75); }
+    .article-content h2 { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 500; color: var(--color-white); margin-top: var(--space-64); margin-bottom: var(--space-24); line-height: 1.2; }
+    .article-content p { font-family: var(--font-body); font-size: var(--text-xl); color: rgba(255,255,255,0.72); line-height: 1.85; margin-bottom: var(--space-24); }
+    .article-content strong { color: rgba(255,255,255,0.9); font-weight: 600; }
+    .article-content ul { margin-bottom: var(--space-24); padding-left: var(--space-24); }
+    .article-content ul li { font-family: var(--font-body); font-size: var(--text-xl); color: rgba(255,255,255,0.72); line-height: 1.85; margin-bottom: var(--space-8); list-style: disc; }
+    .article-content blockquote { border-left: 3px solid rgba(255,255,255,0.2); margin: var(--space-48) 0; padding: var(--space-16) var(--space-32); font-family: var(--font-display); font-size: var(--text-2xl); font-style: italic; color: rgba(255,255,255,0.85); line-height: 1.5; }
+    .article-content a.src-link { color: rgba(255,255,255,0.78); border-bottom: 1px solid rgba(255,255,255,0.25); }
+    @media (max-width: 768px) { .article-hero { padding: var(--space-48) var(--space-24) var(--space-48); min-height: 420px; } .article-body-wrapper { padding: var(--space-48) var(--space-24) var(--space-80); } }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-nav site-nav--inverted" id="site-nav" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <ul class="nav-links nav-links--left" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="approach.html">Approach</a></li>
+      </ul>
+      <a href="index.html" class="nav-logo" aria-label="Holkam Advisory — home">
+        <img src="assets/logo.png" alt="Holkam Advisory" class="nav-logo__img" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+        <span class="nav-logo__wordmark" style="display:none;">
+          <span class="nav-logo__text">HOLKAM</span>
+          <span class="nav-logo__sub">EST. 2026 — AUSTRALIA</span>
+        </span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links nav-links--right" role="list">
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="book.html" class="btn btn--outline nav-cta">Book a Call</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="mobile-menu__overlay" id="mobile-overlay"></div>
+    <nav class="mobile-menu__drawer">
+      <button class="mobile-menu__close" id="mobile-close" aria-label="Close menu">&times;</button>
+      <ul role="list">
+        <li><a href="index.html"    class="mobile-link">Home</a></li>
+        <li><a href="about.html"    class="mobile-link">About</a></li>
+        <li><a href="services.html" class="mobile-link">Services</a></li>
+        <li><a href="approach.html" class="mobile-link">Approach</a></li>
+        <li><a href="team.html"     class="mobile-link">Our Team</a></li>
+        <li><a href="contact.html"  class="mobile-link">Contact</a></li>
+      </ul>
+      <a href="book.html" class="btn btn--dark mobile-cta">Book a Call</a>
+    </nav>
+  </div>
+
+
+  <!-- ARTICLE HERO -->
+  <section class="article-hero">
+    <div class="article-hero__overlay"></div>
+    <div class="article-hero__content">
+      <span class="article-hero__cat">Market Insight</span>
+      <h1 class="article-hero__title">The Verification Problem,<br />Not the AI Problem</h1>
+      <div class="article-hero__meta">
+        <span>July 2026</span>
+        <span class="article-hero__meta-dot"></span>
+        <span>6 min read</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ARTICLE BODY -->
+  <div class="article-body-wrapper">
+
+    <div class="article-author">
+      <div class="article-author__avatar">
+        <img src="assets/images/boipelo.jpg" alt="Boipelo Ntsoane" onerror="this.style.display='none';" />
+      </div>
+      <div class="article-author__info">
+        <span class="article-author__name">Boipelo Ntsoane</span>
+        <span class="article-author__role">Founder, Holkam Advisory</span>
+      </div>
+      <div class="article-author__actions">
+        <a href="https://www.linkedin.com/in/boipelo-ntsoane/" target="_blank" rel="noopener noreferrer" class="article-author__action" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <button class="article-author__action" aria-label="Share article" onclick="navigator.share ? navigator.share({title: document.title, url: location.href}) : navigator.clipboard.writeText(location.href)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <a href="articles.html" class="article-back">&larr; Back to Articles</a>
+
+    <div class="article-content">
+      <p>
+        A client asked if you check AI-drafted citations before you file them. You said yes.
+        In June 2026, a federal court in Mississippi found out that answer was not entirely
+        true for four lawyers at once, and cancelled the trial because of it. This is not an
+        AI problem. It is a verification problem, and it now has a documented cost attached
+        to it.
+      </p>
+
+      <blockquote>
+        &ldquo;The firms that come through this transition intact will not be the firms with
+        the best AI tool. They will be the firms with the most boring, most consistent
+        citation-checking habit.&rdquo;
+      </blockquote>
+
+      <h2>What Happened in Aberdeen, Mississippi</h2>
+      <p>
+        On 8 June 2026, Judge Sharion Aycock of the United States District Court for the
+        Northern District of Mississippi issued a sanctions order in <em>Withers v. City of
+        Aberdeen</em>, a contractual dispute over unpaid legal fees. Both legal teams had built
+        filings on generative AI, and both filings contained hallucinations: case citations
+        that do not exist, attributed to courts that never issued them, as first reported by
+        <a class="src-link" href="https://www.404media.co/judge-learns-lawyers-on-both-sides-of-case-used-ai-cancels-trial-kicks-everyone-off-the-case/" target="_blank" rel="noopener noreferrer">404 Media</a>.
+      </p>
+      <p>
+        Kathryn Young Williams admitted to using an AI tool for legal research. Kathleen
+        Wilson admitted to using AI to draft her filing. The other two attorneys on the case,
+        Mark McClinton and Shauncey Hunter Ridgeway, admitted to signing legal memoranda
+        without checking the sources inside them. Aycock disqualified all four attorneys from
+        the case, barred two of them from appearing before Northern District of Mississippi
+        courts for two years, and imposed a combined $8,000 in monetary sanctions, per
+        <a class="src-link" href="https://mississippitoday.org/2026/06/11/mississippi-judge-ousts-lawyers-ai/" target="_blank" rel="noopener noreferrer">Mississippi Today</a>.
+        The trial did not happen. Neither side has counsel.
+      </p>
+
+      <h2>The Discipline Costs Nothing</h2>
+      <p>
+        You do not need a compliance department to avoid that outcome. You need one habit:
+        every citation gets checked against a primary source before the document leaves the
+        building, not after. That is the entire policy. It fits in a sentence, and the firm
+        across town can already say it without checking with anyone.
+      </p>
+
+      <h2>A One-Page Verification Checklist for Practices Without a Compliance Team</h2>
+      <p>
+        Solo and small practitioners do not need a compliance framework to close this gap.
+        Five checks, applied before a filing leaves the building, cover the exposure that
+        four attorneys in Mississippi did not.
+      </p>
+      <ul>
+        <li><strong>Open every citation.</strong> Not the AI's summary of it, the primary source itself: the court website, the official reporter, or a licensed legal database.</li>
+        <li><strong>Treat AI-assisted drafts as unverified by default.</strong> A draft is not filing-ready until every citation has cleared the first check.</li>
+        <li><strong>Name one person who signs off.</strong> It does not need to be a partner. It needs to be one person, every time, so the check is never assumed to be someone else's job.</li>
+        <li><strong>Set a hard rule on the ten-minute citation.</strong> If a case cannot be located in a primary source within ten minutes, it does not go in the filing until it can.</li>
+        <li><strong>Log which AI tool produced the first draft.</strong> Not for compliance theatre. For your own pattern recognition the next time something slips through.</li>
+      </ul>
+
+      <h2>South Africa Has Already Decided How It Will Treat This</h2>
+      <p>
+        This is not a problem South African practitioners get to watch happen somewhere
+        else. In <em>Mavundla v MEC: Department of Co-Operative Government and Traditional
+        Affairs KwaZulu-Natal</em> [2025] ZAKZPHC 2, and again in <em>Northbound Processing
+        (Pty) Ltd v The South African Diamond and Precious Metals Regulator</em> (Gauteng
+        High Court, Case No. 2025-072038), South African courts confirmed that fabricated AI
+        citations in court papers trigger mandatory referral to the Legal Practice Council,
+        a pattern set out in detail by
+        <a class="src-link" href="https://www.cliffedekkerhofmeyr.com/en/news/publications/2025/Practice/Employment-Law/combined-employment-and-knowledge-management-alert-4-july-Another-episode-of-fabricated-citations-real-repercussions-South-African-courts-show-no-tolerance-for-AI-hallucinated-cases" target="_blank" rel="noopener noreferrer">Cliffe Dekker Hofmeyr</a>.
+        Good faith is not a defence. Neither is time pressure. The professional duty to
+        verify sits with the practitioner regardless of which tool produced the first draft.
+      </p>
+
+      <h2>What the Verify-First Model Actually Looks Like</h2>
+      <p>
+        Australia is not waiting to find out the hard way either. Habeas, a Sydney-based
+        legal research platform, built its product around verifying against primary
+        legislation and case law before it generates a sentence, not after. Every assertion
+        the platform makes traces back to a citation a lawyer can open with one click. You do
+        not need their software specifically. You need their discipline, and the adoption
+        curve in Australia (see our briefing on the <a href="article-5.html" style="color:rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.2);">National AI Plan</a>)
+        suggests South African firms have somewhere between 12 and 18 months before that
+        discipline stops being a differentiator and starts being the baseline every client
+        assumes you already have.
+      </p>
+      <p>
+        Holkam Advisory tracks the regulatory and disciplinary signals shaping how AI is used
+        in legal practice across Australia and South Africa. If you want to know where the
+        verification bar is likely to sit in twelve months, not where it sits today,
+        <a href="contact.html" style="color:rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.2);">contact us here</a>.
+      </p>
+    </div>
+
+    <div class="article-tag-footer">
+      <span class="article-tag-footer__label">Filed under</span>
+      <span class="article-tag-footer__tag">Market Insight</span>
+    </div>
+
+    <div class="read-next">
+      <p class="read-next__label">Read Next</p>
+      <div class="read-next__track">
+        <a href="article-5.html" class="read-next__card">
+          <span class="read-next__card-tag">Market Insight</span>
+          <span class="read-next__card-title">Australia&rsquo;s National AI Plan: What Voluntary Governance Actually Means for SA</span>
+        </a>
+        <a href="article-6.html" class="read-next__card">
+          <span class="read-next__card-tag">The Prediction</span>
+          <span class="read-next__card-title">Why South Africa Is Losing the AI Race</span>
+        </a>
+        <a href="article-1.html" class="read-next__card">
+          <span class="read-next__card-tag">Market Insight</span>
+          <span class="read-next__card-title">Regulatory Changes Affecting Law Firms in 2026</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer-enhanced" role="contentinfo">
+    <div class="footer-main container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col--brand">
+          <a href="index.html" class="footer-logo" aria-label="Holkam Advisory — home">
+            <img src="assets/logo.png" alt="Holkam Advisory" class="footer-logo__img" />
+          </a>
+          <p class="footer-tagline"><em>Intelligence built on heritage.</em></p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="approach.html">Approach</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Legal</h4>
+          <ul class="footer-links-list">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__heading">Connect</h4>
+          <a href="mailto:info@holkamadvisory.com" class="footer-email-link">info@holkamadvisory.com</a>
+          <p class="footer-location">Australia &bull; South Africa</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/boipelo-ntsoane/" target="_blank" rel="noopener noreferrer" class="footer-social__link" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="container footer-bar__inner">
+        <p class="footer-bar__copy">&copy; 2026 Holkam Advisory (Pty) Ltd. All rights reserved.</p>
+        <div class="footer-bar__legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <span>&middot;</span>
+          <a href="terms.html">Terms of Service</a>
+          <span>&middot;</span>
+          <a href="cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

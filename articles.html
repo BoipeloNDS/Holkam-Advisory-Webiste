@@ -200,6 +200,11 @@
       .articles-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
+    @media (max-width: 640px) {
+      .articles-filter { gap: var(--space-8); }
+      .articles-filter__btn { padding: 7px 14px; font-size: 11px; }
+    }
+
     @media (max-width: 768px) {
       .articles-hero { padding-inline: var(--space-24); }
       .articles-grid-section { padding-inline: var(--space-24); }
@@ -269,12 +274,20 @@
   <div class="articles-divider"></div>
 
   <div class="articles-grid-section">
+
+    <div class="articles-filter" role="group" aria-label="Filter articles by tag">
+      <button type="button" class="articles-filter__btn is-active" data-filter="all">All</button>
+      <button type="button" class="articles-filter__btn" data-filter="market-insight">Market Insight</button>
+      <button type="button" class="articles-filter__btn" data-filter="the-prediction">The Prediction</button>
+      <button type="button" class="articles-filter__btn" data-filter="contribution">Contribution</button>
+    </div>
+
     <div class="articles-grid">
 
-      <a href="article-1.html" class="article-listing-card animate-on-scroll">
+      <a href="article-1.html" class="article-listing-card animate-on-scroll" data-tag="market-insight">
         <div class="article-listing-card__img">
           <img src="assets/images/article-hero-1.jpg" alt="Regulatory Changes Affecting Law Firms in 2026" onerror="this.style.display='none';" />
-          <span class="article-listing-card__cat">Compliance</span>
+          <span class="article-listing-card__cat">Market Insight</span>
         </div>
         <div class="article-listing-card__body">
           <h2 class="article-listing-card__title">Regulatory Changes Affecting Law Firms in 2026</h2>
@@ -289,10 +302,10 @@
         </div>
       </a>
 
-      <a href="article-2.html" class="article-listing-card animate-on-scroll">
+      <a href="article-2.html" class="article-listing-card animate-on-scroll" data-tag="market-insight">
         <div class="article-listing-card__img">
           <img src="assets/images/article-hero-2.jpg" alt="How Australian Legal Tech is Reshaping the Industry" onerror="this.style.display='none';" />
-          <span class="article-listing-card__cat">Market Intelligence</span>
+          <span class="article-listing-card__cat">Market Insight</span>
         </div>
         <div class="article-listing-card__body">
           <h2 class="article-listing-card__title">How Australian Legal Tech is Reshaping the Industry</h2>
@@ -307,10 +320,10 @@
         </div>
       </a>
 
-      <a href="article-3.html" class="article-listing-card animate-on-scroll">
+      <a href="article-3.html" class="article-listing-card animate-on-scroll" data-tag="the-prediction">
         <div class="article-listing-card__img">
           <img src="assets/images/article-hero-3.jpg" alt="The Client Retention Crisis: Why Service Firms Are Losing Ground" onerror="this.style.display='none';" />
-          <span class="article-listing-card__cat">Strategy</span>
+          <span class="article-listing-card__cat">The Prediction</span>
         </div>
         <div class="article-listing-card__body">
           <h2 class="article-listing-card__title">The Client Retention Crisis: Why Service Firms Are Losing Ground</h2>
@@ -320,6 +333,60 @@
           </p>
           <div class="article-listing-card__footer">
             <span class="article-listing-card__meta">May 2026 &middot; 8 min read</span>
+            <span class="article-listing-card__link">Read more &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="article-4.html" class="article-listing-card animate-on-scroll" data-tag="market-insight">
+        <div class="article-listing-card__img">
+          <img src="assets/images/gherkin.jpg" alt="The Verification Problem, Not the AI Problem" onerror="this.style.display='none';" />
+          <span class="article-listing-card__cat">Market Insight</span>
+        </div>
+        <div class="article-listing-card__body">
+          <h2 class="article-listing-card__title">The Verification Problem, Not the AI Problem</h2>
+          <p class="article-listing-card__excerpt">
+            A Mississippi court cancelled a trial and disqualified four attorneys over AI-hallucinated
+            citations. The fix costs nothing and fits in one sentence.
+          </p>
+          <div class="article-listing-card__footer">
+            <span class="article-listing-card__meta">July 2026 &middot; 6 min read</span>
+            <span class="article-listing-card__link">Read more &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="article-5.html" class="article-listing-card animate-on-scroll" data-tag="market-insight">
+        <div class="article-listing-card__img">
+          <img src="assets/images/sydney-skyline.jpg" alt="Australia's National AI Plan: What Voluntary Governance Means for SA" onerror="this.style.display='none';" />
+          <span class="article-listing-card__cat">Market Insight</span>
+        </div>
+        <div class="article-listing-card__body">
+          <h2 class="article-listing-card__title">Australia&rsquo;s National AI Plan: What Voluntary Governance Means for SA</h2>
+          <p class="article-listing-card__excerpt">
+            Australia shelved its mandatory AI rulebook for voluntary governance. Here is what that
+            model actually enforces, and what it means for SA&rsquo;s path.
+          </p>
+          <div class="article-listing-card__footer">
+            <span class="article-listing-card__meta">June 2026 &middot; 7 min read</span>
+            <span class="article-listing-card__link">Read more &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="article-6.html" class="article-listing-card animate-on-scroll" data-tag="the-prediction">
+        <div class="article-listing-card__img">
+          <img src="assets/images/johannesburg.jpg" alt="Why South Africa Is Losing the AI Race" onerror="this.style.display='none';" />
+          <span class="article-listing-card__cat">The Prediction</span>
+        </div>
+        <div class="article-listing-card__body">
+          <h2 class="article-listing-card__title">Why South Africa Is Losing the AI Race</h2>
+          <p class="article-listing-card__excerpt">
+            SA law firms are losing the AI race, not because they are slow, but because they are
+            treating a foresight problem like a procurement decision.
+          </p>
+          <div class="article-listing-card__footer">
+            <span class="article-listing-card__meta">May 2026 &middot; 6 min read</span>
             <span class="article-listing-card__link">Read more &rarr;</span>
           </div>
         </div>
