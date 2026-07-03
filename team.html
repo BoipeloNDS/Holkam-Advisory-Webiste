@@ -421,15 +421,15 @@
               <div class="nav-megamenu__featured">
                 <span class="nav-megamenu__featured-label">Featured</span>
                 <a href="article-4.html" class="nav-megamenu__feat-card">
-                  <img src="assets/images/gherkin.jpg" alt="" />
+                  <img loading="lazy" src="assets/images/gherkin.jpg" alt="" />
                   <span>The Verification Problem, Not the AI Problem</span>
                 </a>
                 <a href="article-5.html" class="nav-megamenu__feat-card">
-                  <img src="assets/images/sydney-skyline.jpg" alt="" />
+                  <img loading="lazy" src="assets/images/sydney-skyline.jpg" alt="" />
                   <span>Australia&rsquo;s National AI Plan</span>
                 </a>
                 <a href="article-6.html" class="nav-megamenu__feat-card">
-                  <img src="assets/images/johannesburg.jpg" alt="" />
+                  <img loading="lazy" src="assets/images/johannesburg.jpg" alt="" />
                   <span>Why South Africa Is Losing the AI Race</span>
                 </a>
               </div>
@@ -665,7 +665,7 @@
 
       filmstrip.innerHTML = TEAM_MEMBERS.map((member, i) => `
         <button class="team-filmstrip__item${i === 0 ? ' is-active' : ''}" data-index="${i}" aria-label="Show ${member.name}">
-          <span class="team-filmstrip__avatar"><img src="${member.avatar}" alt="" /></span>
+          <span class="team-filmstrip__avatar"><img loading="lazy" src="${member.avatar}" alt="" /></span>
           <span class="team-filmstrip__name">${member.name}</span>
           <span class="team-filmstrip__role">${member.role.replace(/&amp;/g, '&')}</span>
         </button>
