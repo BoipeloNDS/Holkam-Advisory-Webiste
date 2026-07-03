@@ -189,3 +189,42 @@
     }
   });
 })();
+
+
+/* ============================================================
+   MODULE 9 — Autoplay reliability for background videos
+   The `autoplay` attribute alone can silently fail (data-saver
+   mode, battery-saver mode, a slow connection racing the video's
+   readiness, etc). This retries programmatically and, as a last
+   resort, starts playback on the visitor's first tap/click —
+   browsers that block attribute-based autoplay still allow
+   play() from a real user gesture.
+   ============================================================ */
+(function initVideoAutoplay() {
+  var videos = Array.prototype.slice.call(document.querySelectorAll('video[autoplay]'));
+  if (!videos.length) return;
+
+  function tryPlay(video) {
+    if (!video.paused) return;
+    var p = video.play();
+    if (p && typeof p.catch === 'function') p.catch(function () { /* retried elsewhere */ });
+  }
+
+  videos.forEach(function (video) {
+    tryPlay(video);
+    video.addEventListener('loadedmetadata', function () { tryPlay(video); });
+    video.addEventListener('canplay', function () { tryPlay(video); });
+  });
+
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') videos.forEach(tryPlay);
+  });
+
+  var resumeOnGesture = function () {
+    videos.forEach(tryPlay);
+    document.removeEventListener('touchstart', resumeOnGesture);
+    document.removeEventListener('click', resumeOnGesture);
+  };
+  document.addEventListener('touchstart', resumeOnGesture, { passive: true, once: true });
+  document.addEventListener('click', resumeOnGesture, { once: true });
+})();
