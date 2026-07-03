@@ -3,24 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="How Holkam Advisory delivers market intelligence — a systematic, repeatable methodology built to institutional standards of research quality. From consultation to ongoing strategic partnership." />
+  <meta name="description" content="Regulatory pipeline monitoring and cross-border compliance intelligence for firms navigating AML/CTF, AI governance, and professional conduct obligations." />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title"       content="Our Intelligence Methodology | Holkam Advisory Australia" />
-  <meta property="og:description" content="A rigorous four-step process: scoping, research, analysis, and delivery. Strategic intelligence done properly." />
+  <meta property="og:title"       content="Regulatory & Compliance | Practice Areas | Holkam Advisory" />
+  <meta property="og:description" content="Regulatory pipeline monitoring and cross-border compliance intelligence for firms navigating AML/CTF, AI governance, and professional conduct obligations." />
   <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://holkamadvisory.com/approach.html" />
-  <title>Our Intelligence Methodology | Holkam Advisory Australia</title>
-  <link rel="canonical" href="https://holkamadvisory.com/approach.html" />
+  <meta property="og:url"         content="https://holkamadvisory.com/industry-regulatory-compliance.html" />
+  <title>Regulatory & Compliance | Practice Areas | Holkam Advisory</title>
+  <link rel="canonical" href="https://holkamadvisory.com/industry-regulatory-compliance.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <style>
+    body { background-color: var(--color-black); }
+    .industry-page-hero { position: relative; min-height: 480px; display: flex; flex-direction: column; justify-content: flex-end; background-image: url('assets/images/gherkin.jpg'); background-size: cover; background-position: center; padding: var(--space-80) var(--space-80) var(--space-64); }
+    .industry-page-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.9) 100%); z-index: 0; }
+    .industry-page-hero__content { position: relative; z-index: 1; max-width: 860px; }
+    .industry-page-hero__eyebrow { display: inline-block; font-family: var(--font-ui); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-white); background: transparent; border: 1px solid rgba(255,255,255,0.4); padding: 5px 14px; margin-bottom: var(--space-24); }
+    .industry-page-hero__title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 500; color: var(--color-white); line-height: 1.05; letter-spacing: -0.01em; margin-bottom: var(--space-16); }
+    .industry-page-hero__sub { font-family: var(--font-body); font-size: var(--text-lg); color: rgba(255,255,255,0.75); max-width: 620px; line-height: 1.7; }
+    .practice-narrative { background: var(--color-white); padding-block: var(--space-80); }
+    .practice-narrative__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-64); }
+    .practice-narrative__label { font-family: var(--font-ui); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-subtle); margin-bottom: var(--space-16); display: block; }
+    .practice-narrative__text { font-family: var(--font-body); font-size: var(--text-lg); line-height: 1.85; color: var(--color-dark-medium); }
+    @media (max-width: 768px) {
+      .industry-page-hero { padding: var(--space-48) var(--space-24); min-height: 400px; }
+      .practice-narrative__grid { grid-template-columns: 1fr; gap: var(--space-32); }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- ============================================================
+       NAVIGATION — inverted (white text on dark video hero)
+       ============================================================ -->
   <header class="site-nav site-nav--inverted" id="site-nav" role="banner">
     <nav class="nav-inner" aria-label="Main navigation">
       <ul class="nav-links nav-links--left" role="list">
@@ -57,8 +76,9 @@
             </div>
           </div>
         </li>
-        <li><a href="approach.html" class="active">Approach</a></li>
+        <li><a href="approach.html">Approach</a></li>
       </ul>
+      <!-- USER ASSET: logo.svg = white wordmark for dark backgrounds -->
       <a href="index.html" class="nav-logo" aria-label="Holkam Advisory — home">
         <img src="assets/logo.png" alt="Holkam Advisory" class="nav-logo__img" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
         <span class="nav-logo__wordmark" style="display:none;">
@@ -87,11 +107,11 @@
     <nav class="mobile-menu__drawer">
       <button class="mobile-menu__close" id="mobile-close" aria-label="Close menu">&times;</button>
       <ul role="list">
-        <li><a href="index.html"    class="mobile-link">Home</a></li>
+        <li><a href="index.html"    class="mobile-link active">Home</a></li>
         <li><a href="about.html"    class="mobile-link">About</a></li>
         <li><a href="services.html" class="mobile-link">Services</a></li>
         <li><a href="industries.html" class="mobile-link">Law Sectors</a></li>
-        <li><a href="approach.html" class="mobile-link active">Approach</a></li>
+        <li><a href="approach.html" class="mobile-link">Approach</a></li>
         <li><a href="team.html"     class="mobile-link">Our Team</a></li>
         <li><a href="news.html"      class="mobile-link">News</a></li>
         <li><a href="contact.html"  class="mobile-link">Contact</a></li>
@@ -102,176 +122,115 @@
 
 
   <!-- ============================================================
-       PAGE HERO
-       USER ASSET: style="background-image: url('assets/images/approach-hero.jpg');"
+       PRACTICE AREA HERO — full-bleed photo
        ============================================================ -->
-  <section class="page-hero" id="top">
-    <video class="page-hero__video" autoplay muted loop playsinline preload="none" aria-hidden="true">
-      <source src="assets/videos/Vid-6.mp4" type="video/mp4" />
-    </video>
-    <div class="page-hero__overlay"></div>
-    <div class="page-hero__content">
-      <span class="page-hero__eyebrow">How we work</span>
-      <h1 class="page-hero__title">Our<br />Approach.</h1>
+  <section class="industry-page-hero">
+    <div class="industry-page-hero__overlay"></div>
+    <div class="industry-page-hero__content">
+      <span class="industry-page-hero__eyebrow">Practice Area 02 / 06</span>
+      <h1 class="industry-page-hero__title">Regulatory &amp; Compliance</h1>
+      <p class="industry-page-hero__sub">Regulatory pipeline monitoring and cross-border compliance intelligence for firms navigating AML/CTF, AI governance, and professional conduct obligations.</p>
     </div>
   </section>
 
-
   <!-- ============================================================
-       INTRO
+       THE CHALLENGE / WHAT WE SEE — narrative framing
        ============================================================ -->
-  <section style="background: var(--color-white); padding-block: var(--space-120);">
-    <div class="container container--narrow" style="text-align: center;">
-      <p class="eyebrow animate-on-scroll">THE PROCESS</p>
-      <h2 class="section-headline animate-on-scroll">
-        From question to clarity
-      </h2>
-      <p class="section-subhead animate-on-scroll">
-        Every engagement follows a disciplined four-stage process,
-        designed to deliver intelligence that is precise, contextualised,
-        and immediately actionable.
-      </p>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       4-STEP PROCESS (numbered editorial rows)
-       ============================================================ -->
-  <section class="approach-process" id="process">
+  <section class="practice-narrative">
     <div class="container">
-
-      <div class="approach-step animate-on-scroll">
-        <span class="approach-step__numeral">I</span>
-        <div>
-          <div class="approach-step__icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          </div>
-          <h3 class="approach-step__title">Consultation</h3>
+      <div class="practice-narrative__grid">
+        <div class="animate-on-scroll-left">
+          <span class="practice-narrative__label">The Challenge</span>
+          <p class="practice-narrative__text">Regulatory pipelines move faster than internal compliance capacity. AML/CTF obligations, AI governance frameworks, and professional conduct requirements shift on timelines that rarely align with a firm's ability to respond. The firms caught flat-footed are not the ones without compliance teams. They are the ones without a warning system.</p>
         </div>
-        <p class="approach-step__body">
-          We begin by listening. Every engagement starts with a structured
-          discovery session to define the precise intelligence question — the
-          specific decision, opportunity, or threat your leadership needs to
-          understand. No brief, no engagement. Clarity of question is half
-          the answer.
-        </p>
-      </div>
-
-      <div class="approach-step animate-on-scroll">
-        <span class="approach-step__numeral">II</span>
-        <div>
-          <div class="approach-step__icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          </div>
-          <h3 class="approach-step__title">Intelligence</h3>
+        <div class="animate-on-scroll">
+          <span class="practice-narrative__label">What We See</span>
+          <p class="practice-narrative__text">Most firms find out about a regulatory shift when a client asks about it, or when the deadline is already close. The gap is not compliance capability. It is the lead time between a rule changing and a firm knowing it changed.</p>
         </div>
-        <p class="approach-step__body">
-          Our analysts deploy primary and secondary research methodologies
-          across open-source, proprietary, and network channels. We map
-          competitors, regulatory environments, market structures, and
-          emerging threats — then synthesise what we find into structured
-          findings that go beyond what a search engine can surface.
-        </p>
       </div>
-
-      <div class="approach-step animate-on-scroll">
-        <span class="approach-step__numeral">III</span>
-        <div>
-          <div class="approach-step__icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
-          </div>
-          <h3 class="approach-step__title">Briefing</h3>
-        </div>
-        <p class="approach-step__body">
-          Findings are synthesised into executive-grade briefing documents —
-          precise, readable, and decisively formatted. We write for the reader
-          who must act, not the reader who wants to feel informed. Our briefings
-          are direct, jargon-free, and structured around the strategic decision
-          they are designed to support.
-        </p>
-      </div>
-
-      <div class="approach-step animate-on-scroll">
-        <span class="approach-step__numeral">IV</span>
-        <div>
-          <div class="approach-step__icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg>
-          </div>
-          <h3 class="approach-step__title">Partnership</h3>
-        </div>
-        <p class="approach-step__body">
-          Retained clients receive ongoing intelligence as a continuous strategic
-          resource, not a one-time report. We remain available to monitor
-          developments, update briefings, and provide advisory support as your
-          strategic context evolves. The best intelligence is not a snapshot —
-          it is a sustained relationship with the landscape.
-        </p>
-      </div>
-
     </div>
   </section>
 
-
   <!-- ============================================================
-       EDITORIAL SPLIT — "Why our process works" (Emerald Fairways style)
+       WHAT WE DELIVER — capability cards
        ============================================================ -->
-  <section class="editorial-split">
-    <div class="editorial-split__text">
-      <h2 class="editorial-split__headline animate-on-scroll-left">
-        Focused on<br />continuity.
+  <section class="why-holkam">
+    <div class="why-holkam__inner">
+      <p class="eyebrow animate-on-scroll">WHAT WE DELIVER</p>
+      <h2 class="why-holkam__headline animate-on-scroll" style="font-size: var(--text-3xl); margin-bottom: var(--space-48);">
+        Intelligence built for regulatory & compliance
       </h2>
-      <div class="editorial-split__features">
-        <div class="editorial-feature animate-on-scroll">
-          <span class="editorial-feature__number">01.</span>
-          <h3 class="editorial-feature__title">No Template Engagements</h3>
-          <p class="editorial-feature__body">
-            Every brief is written fresh. We do not recycle prior
-            research or issue generic sector reports.
-          </p>
+      <div class="why-holkam__grid">
+        <div class="why-card animate-on-scroll">
+          <div class="why-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="why-card__title">Regulatory Pipeline Monitoring</h3>
+          <p class="why-card__desc">AU and SA regulatory guidance tracked before it becomes mandatory.</p>
         </div>
-        <div class="editorial-feature animate-on-scroll">
-          <span class="editorial-feature__number">02.</span>
-          <h3 class="editorial-feature__title">Direct Access</h3>
-          <p class="editorial-feature__body">
-            Clients work directly with our senior analysts throughout
-            every engagement. No junior handoffs.
-          </p>
+
+        <div class="why-card animate-on-scroll">
+          <div class="why-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3 class="why-card__title">Cross-Border Compliance Mapping</h3>
+          <p class="why-card__desc">For firms and businesses operating across both Australian and South African jurisdictions.</p>
         </div>
-        <div class="editorial-feature animate-on-scroll">
-          <span class="editorial-feature__number">03.</span>
-          <h3 class="editorial-feature__title">Measured by Outcomes</h3>
-          <p class="editorial-feature__body">
-            We measure our success by the quality of our clients'
-            decisions &mdash; not the volume of our outputs.
-          </p>
+
+        <div class="why-card animate-on-scroll">
+          <div class="why-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20M2 12l6-6M2 12l6 6M22 12l-6-6M22 12l-6 6"/></svg>
+          </div>
+          <h3 class="why-card__title">AI Governance Tracking</h3>
+          <p class="why-card__desc">The fastest-moving regulatory front right now, monitored in both markets.</p>
         </div>
-      </div>
-    </div>
-    <!-- USER ASSET: Two businessmen reviewing docs → assets/images/businessmen-two.jpg -->
-    <div class="editorial-split__image">
-      <img src="assets/images/businessmen-two.jpg" alt="Our process in action" class="fill-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-      <div class="img-ph" style="display:none;">
-        <p class="img-ph__label">assets/images/<br>businessmen-two.jpg</p>
       </div>
     </div>
   </section>
 
-
   <!-- ============================================================
-       QUOTE BAND
+       POSITIONING QUOTE
        ============================================================ -->
-  <section class="approach-quote">
-    <div class="container">
-      <p class="eyebrow eyebrow--light animate-on-scroll" style="text-align:center;">VISION</p>
-      <blockquote class="approach-quote__text animate-on-scroll">
-        &ldquo;The purpose here is continuity. Intelligence is approached
-        as something sustained over time, not refreshed for effect.&rdquo;
+  <section class="industry-quote-band">
+    <div class="industry-quote-band__inner">
+      <blockquote class="vision-section__quote animate-on-scroll">
+        &ldquo;The firms that understand regulatory change earliest get to set the terms of the conversation, not just respond to it.&rdquo;
       </blockquote>
-      <em class="approach-quote__signature animate-on-scroll">Holkam Advisory</em>
     </div>
   </section>
 
+  <!-- ============================================================
+       RELATED INSIGHT
+       ============================================================ -->
+  <section class="industry-related">
+    <div class="industry-related__inner">
+      <p class="eyebrow industry-related__eyebrow animate-on-scroll">RELATED INSIGHT</p>
+      <a href="article-1.html" class="industry-related__card animate-on-scroll">
+        <img src="assets/images/og/article-1.jpg" alt="" />
+        <span>Regulatory Changes Affecting Law Firms in 2026</span>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TALK TO US
+       ============================================================ -->
+  <section class="industry-contact">
+    <div class="industry-contact__card animate-on-scroll">
+      <div class="industry-contact__avatar">
+        <img src="assets/images/boipelo.jpg" alt="Boipelo Ntsoane" onerror="this.style.display='none';" />
+      </div>
+      <div>
+        <span class="industry-contact__name">Boipelo Ntsoane</span>
+        <span class="industry-contact__role">Founder, Holkam Advisory</span>
+        <div class="industry-contact__actions">
+          <a href="contact.html">Talk to us about regulatory & compliance</a>
+          <a href="https://www.linkedin.com/in/boipelo-ntsoane/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CTA BAND -->
   <section class="cta-band">
@@ -280,16 +239,11 @@
     </video>
     <div class="cta-band__overlay"></div>
     <div class="cta-band__content animate-on-scroll">
-      <h2 class="cta-band__headline">
-        Ready to begin?
-      </h2>
-      <p class="cta-band__sub">
-        Start with a consultation. We&rsquo;ll take it from there.
-      </p>
+      <h2 class="cta-band__headline">Ready to talk regulatory & compliance?</h2>
+      <p class="cta-band__sub">Start with a consultation. We&rsquo;ll take it from there.</p>
       <a href="contact.html" class="btn btn--outline-white">Request a Consultation</a>
     </div>
   </section>
-
 
   <!-- FOOTER -->
   <footer class="site-footer-enhanced" role="contentinfo">
@@ -354,3 +308,4 @@
   <script src="js/main.js" defer></script>
 </body>
 </html>
+

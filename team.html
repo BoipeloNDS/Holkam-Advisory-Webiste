@@ -18,41 +18,226 @@
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="apple-touch-icon" href="assets/favicon.png" />
   <style>
-    body { background-color: var(--color-black); }
+    body { background-color: var(--color-white); }
 
-    .team-hero {
-      padding-top: calc(var(--nav-height) + var(--space-80));
-      padding-bottom: var(--space-80);
-      padding-inline: var(--space-80);
-      max-width: 1400px;
-      margin-inline: auto;
+    /* This page has a white background at load (no dark hero), so the nav logo
+       (a white asset by default) needs to stay inverted to dark at all times. */
+    #site-nav:not(.scrolled) .nav-logo__img { filter: invert(1); }
+
+    /* TEAM SHOWCASE (Amber Aviation-style) */
+    .team-showcase {
+      padding-top: calc(var(--nav-height) + var(--space-32));
     }
 
-    .team-hero__eyebrow { color: rgba(255,255,255,0.35); margin-bottom: var(--space-16); }
+    .team-showcase__breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: var(--space-8);
+      padding-inline: var(--space-80);
+      margin-bottom: var(--space-24);
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      color: rgba(0,0,0,0.35);
+    }
 
-    .team-hero__title {
+    .team-showcase__breadcrumb a { color: rgba(0,0,0,0.5); display: inline-flex; align-items: center; transition: color var(--transition-fast); }
+    .team-showcase__breadcrumb a:hover { color: var(--color-dark); }
+    .team-showcase__breadcrumb span[aria-current] { color: rgba(0,0,0,0.6); }
+
+    /* Stage: relative box holding the arrows, text, photo and the glass
+       filmstrip that overlaps the bottom edge of the photo. */
+    .team-showcase__stage {
+      position: relative;
+      width: 100%;
+      height: calc(100vh - var(--nav-height) - 64px);
+      min-height: 620px;
+      max-height: 800px;
+      overflow: hidden;
+    }
+
+    .team-showcase__arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.15);
+      background: var(--color-white);
+      color: var(--color-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background var(--transition-fast), border-color var(--transition-fast), opacity var(--transition-fast);
+      z-index: 20;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .team-showcase__arrow--prev { left: var(--space-24); }
+    .team-showcase__arrow--next { right: var(--space-24); }
+
+    .team-showcase__arrow:hover { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.3); }
+    .team-showcase__arrow:disabled { opacity: 0.25; cursor: default; pointer-events: none; }
+
+    .team-showcase__content {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: min(46%, 620px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-inline: var(--space-80);
+      padding-bottom: 190px;
+      z-index: 5;
+    }
+
+    .team-showcase__office {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.35);
+      margin-bottom: var(--space-16);
+    }
+
+    .team-showcase__name {
       font-family: var(--font-display);
-      font-size: var(--text-5xl);
-      font-weight: 400;
       font-style: italic;
-      color: var(--color-white);
-      line-height: 1.1;
+      font-size: var(--text-4xl);
+      font-weight: 400;
+      color: var(--color-dark);
+      line-height: 1.15;
+      margin-bottom: var(--space-8);
+    }
+
+    .team-showcase__role {
+      font-family: var(--font-ui);
+      font-size: var(--text-lg);
+      font-weight: 400;
+      color: rgba(0,0,0,0.55);
       margin-bottom: var(--space-24);
     }
 
-    .team-hero__sub {
+    .team-showcase__bio {
       font-family: var(--font-body);
-      font-size: var(--text-xl);
-      color: rgba(255,255,255,0.45);
-      max-width: 580px;
-      line-height: 1.75;
+      font-size: var(--text-lg);
+      line-height: 1.85;
+      color: rgba(0,0,0,0.6);
+      margin-bottom: var(--space-32);
+      max-width: 420px;
+    }
+
+    .team-showcase__actions { display: flex; align-items: center; gap: var(--space-16); flex-wrap: wrap; }
+
+    .team-showcase__photo-wrap {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 54%;
+      background: var(--color-white);
+      overflow: hidden;
+    }
+
+    .team-showcase__photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .team-showcase__content.is-fading,
+    .team-showcase__photo-wrap.is-fading { opacity: 0; }
+    .team-showcase__content,
+    .team-showcase__photo-wrap { transition: opacity 320ms ease; }
+
+    /* Glass filmstrip — frosted overlay sitting on the bottom edge of the stage */
+    .team-filmstrip {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      gap: var(--space-16);
+      align-items: center;
+      padding: var(--space-20, var(--space-16)) var(--space-80);
+      overflow-x: auto;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+      border-top: 1px solid rgba(255,255,255,0.6);
+      z-index: 15;
+    }
+
+    .team-filmstrip__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-shrink: 0;
+      padding: var(--space-8);
+      opacity: 0.55;
+      transition: opacity var(--transition-fast);
+    }
+
+    .team-filmstrip__item:hover { opacity: 0.85; }
+    .team-filmstrip__item.is-active { opacity: 1; }
+
+    .team-filmstrip__avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid transparent;
+      background: var(--color-white);
+      transition: border-color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .team-filmstrip__item.is-active .team-filmstrip__avatar { border-color: var(--color-dark); transform: scale(1.08); }
+
+    .team-filmstrip__avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .team-filmstrip__name {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      color: var(--color-dark);
+      white-space: nowrap;
+    }
+
+    .team-filmstrip__role {
+      font-family: var(--font-ui);
+      font-size: 10px;
+      color: rgba(0,0,0,0.5);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .team-showcase__stage { position: static; height: auto; max-height: none; overflow: visible; }
+      .team-showcase__arrow { display: none; }
+      .team-showcase__content { position: static; width: 100%; padding-bottom: var(--space-32); }
+      .team-showcase__photo-wrap { position: static; width: 100%; aspect-ratio: 4/5; padding-top: var(--space-24); }
+      .team-filmstrip { position: static; backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--color-off-white); }
+    }
+
+    @media (max-width: 768px) {
+      .team-showcase__breadcrumb, .team-filmstrip { padding-inline: var(--space-24); }
+      .team-showcase__content { padding-inline: var(--space-24); }
+      .team-showcase__name { font-size: var(--text-3xl); }
     }
 
     /* Offices band */
     .team-offices {
-      background: rgba(255,255,255,0.04);
-      border-top: 1px solid rgba(255,255,255,0.07);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      background: var(--color-off-white);
+      border-top: 1px solid rgba(0,0,0,0.07);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
       padding-block: var(--space-32);
       margin-bottom: var(--space-120);
     }
@@ -72,7 +257,7 @@
       font-size: var(--text-xs);
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
+      color: rgba(0,0,0,0.35);
       flex-shrink: 0;
     }
 
@@ -92,89 +277,21 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.25);
+      background: rgba(0,0,0,0.3);
     }
 
     .team-offices__city {
       font-family: var(--font-ui);
       font-size: var(--text-sm);
       font-weight: 500;
-      color: var(--color-white);
+      color: var(--color-dark);
     }
 
     .team-offices__country {
       font-family: var(--font-ui);
       font-size: var(--text-xs);
-      color: rgba(255,255,255,0.35);
+      color: rgba(0,0,0,0.4);
       margin-top: 2px;
-    }
-
-    /* Team grid */
-    .team-page-grid {
-      max-width: 1400px;
-      margin-inline: auto;
-      padding-inline: var(--space-80);
-      padding-bottom: var(--space-120);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-64) var(--space-48);
-    }
-
-    .team-page-card {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .team-page-card__photo {
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      overflow: hidden;
-      border-radius: 16px;
-      background: #f5f5f5;
-      margin-bottom: var(--space-32);
-    }
-
-    .team-page-card__photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center center;
-      display: block;
-    }
-
-    .team-page-card__office {
-      font-family: var(--font-ui);
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-      margin-bottom: var(--space-8);
-    }
-
-    .team-page-card__name {
-      font-family: var(--font-display);
-      font-size: var(--text-2xl);
-      font-weight: 400;
-      color: var(--color-white);
-      margin-bottom: var(--space-8);
-    }
-
-    .team-page-card__role {
-      font-family: var(--font-ui);
-      font-size: var(--text-xs);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: var(--space-24);
-    }
-
-    .team-page-card__bio {
-      font-family: var(--font-body);
-      font-size: var(--text-lg);
-      color: rgba(255,255,255,0.55);
-      line-height: 1.8;
-      flex: 1;
-      margin-bottom: var(--space-24);
     }
 
     .team-page-card__linkedin {
@@ -185,23 +302,16 @@
       font-size: var(--text-xs);
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-      border-bottom: 1px solid rgba(255,255,255,0.12);
+      color: rgba(0,0,0,0.45);
+      border-bottom: 1px solid rgba(0,0,0,0.18);
       padding-bottom: 3px;
       transition: color var(--transition-fast), border-color var(--transition-fast);
       width: fit-content;
     }
 
     .team-page-card__linkedin:hover {
-      color: var(--color-white);
-      border-color: rgba(255,255,255,0.4);
-    }
-
-    .team-page-card__actions {
-      display: flex;
-      align-items: center;
-      gap: var(--space-16);
-      flex-wrap: wrap;
+      color: var(--color-dark);
+      border-color: rgba(0,0,0,0.5);
     }
 
     .team-page-card__email {
@@ -212,16 +322,16 @@
       font-size: var(--text-xs);
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-      border-bottom: 1px solid rgba(255,255,255,0.12);
+      color: rgba(0,0,0,0.45);
+      border-bottom: 1px solid rgba(0,0,0,0.18);
       padding-bottom: 3px;
       transition: color var(--transition-fast), border-color var(--transition-fast);
       width: fit-content;
     }
 
     .team-page-card__email:hover {
-      color: var(--color-white);
-      border-color: rgba(255,255,255,0.4);
+      color: var(--color-dark);
+      border-color: rgba(0,0,0,0.5);
     }
 
     /* Join CTA */
@@ -279,27 +389,53 @@
     }
 
     @media (max-width: 1024px) {
-      .team-page-grid { grid-template-columns: repeat(2, 1fr); padding-inline: var(--space-48); }
-      .team-hero { padding-inline: var(--space-48); }
       .team-offices__inner { padding-inline: var(--space-48); }
     }
 
     @media (max-width: 768px) {
-      .team-hero { padding-inline: var(--space-24); padding-top: calc(var(--nav-height) + var(--space-48)); }
-      .team-hero__title { font-size: var(--text-4xl); }
       .team-offices__inner { padding-inline: var(--space-24); gap: var(--space-32); }
-      .team-page-grid { grid-template-columns: 1fr; padding-inline: var(--space-24); }
     }
   </style>
 </head>
 <body>
 
   <!-- NAVIGATION -->
-  <header class="site-nav site-nav--inverted" id="site-nav" role="banner">
+  <header class="site-nav" id="site-nav" role="banner">
     <nav class="nav-inner" aria-label="Main navigation">
       <ul class="nav-links nav-links--left" role="list">
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
+        <li class="nav-item nav-item--has-mega">
+          <a href="industries.html" class="nav-mega-trigger">Law Sectors</a>
+          <div class="nav-megamenu">
+            <div class="nav-megamenu__inner">
+              <div class="nav-megamenu__links">
+                <a href="industries.html" class="nav-megamenu__all">See all practice areas &rarr;</a>
+                <a href="industry-corporate-ma.html" class="nav-megamenu__item"><span class="nav-megamenu__item-num">01</span><span class="nav-megamenu__item-name">Corporate &amp; M&amp;A</span></a>
+                <a href="industry-regulatory-compliance.html" class="nav-megamenu__item"><span class="nav-megamenu__item-num">02</span><span class="nav-megamenu__item-name">Regulatory &amp; Compliance</span></a>
+                <a href="industry-dispute-resolution.html" class="nav-megamenu__item"><span class="nav-megamenu__item-num">03</span><span class="nav-megamenu__item-name">Dispute Resolution &amp; Litigation</span></a>
+                <a href="industry-employment.html" class="nav-megamenu__item"><span class="nav-megamenu__item-num">04</span><span class="nav-megamenu__item-name">Employment Law</span></a>
+                <a href="industry-banking-finance.html" class="nav-megamenu__item"><span class="nav-megamenu__item-num">05</span><span class="nav-megamenu__item-name">Banking &amp; Finance</span></a>
+                <a href="industry-ip-technology.html" class="nav-megamenu__item"><span class="nav-megamenu__item-num">06</span><span class="nav-megamenu__item-name">IP &amp; Technology Law</span></a>
+              </div>
+              <div class="nav-megamenu__featured">
+                <span class="nav-megamenu__featured-label">Featured</span>
+                <a href="article-4.html" class="nav-megamenu__feat-card">
+                  <img src="assets/images/gherkin.jpg" alt="" />
+                  <span>The Verification Problem, Not the AI Problem</span>
+                </a>
+                <a href="article-5.html" class="nav-megamenu__feat-card">
+                  <img src="assets/images/sydney-skyline.jpg" alt="" />
+                  <span>Australia&rsquo;s National AI Plan</span>
+                </a>
+                <a href="article-6.html" class="nav-megamenu__feat-card">
+                  <img src="assets/images/johannesburg.jpg" alt="" />
+                  <span>Why South Africa Is Losing the AI Race</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
         <li><a href="approach.html">Approach</a></li>
       </ul>
       <a href="index.html" class="nav-logo" aria-label="Holkam Advisory — home">
@@ -312,6 +448,7 @@
       <div class="nav-right">
         <ul class="nav-links nav-links--right" role="list">
           <li><a href="team.html" class="active">Our Team</a></li>
+          <li><a href="news.html">News</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <a href="book.html" class="btn btn--outline nav-cta">Book a Call</a>
@@ -332,8 +469,10 @@
         <li><a href="index.html"    class="mobile-link">Home</a></li>
         <li><a href="about.html"    class="mobile-link">About</a></li>
         <li><a href="services.html" class="mobile-link">Services</a></li>
+        <li><a href="industries.html" class="mobile-link">Law Sectors</a></li>
         <li><a href="approach.html" class="mobile-link">Approach</a></li>
         <li><a href="team.html"     class="mobile-link active">Our Team</a></li>
+        <li><a href="news.html"      class="mobile-link">News</a></li>
         <li><a href="contact.html"  class="mobile-link">Contact</a></li>
       </ul>
       <a href="book.html" class="btn btn--dark mobile-cta">Book a Call</a>
@@ -341,14 +480,54 @@
   </div>
 
 
-  <!-- HERO -->
-  <div class="team-hero">
-    <p class="eyebrow eyebrow--light team-hero__eyebrow">THE PEOPLE</p>
-    <h1 class="team-hero__title">Our team.</h1>
-    <p class="team-hero__sub">
-      The people behind Holkam Advisory — building intelligence
-      infrastructure across Australia and Pretoria.
-    </p>
+  <!-- TEAM SHOWCASE -->
+  <div class="team-showcase">
+    <div class="team-showcase__breadcrumb">
+      <a href="index.html" aria-label="Home">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      </a>
+      <span>&rsaquo;</span>
+      <span aria-current="page">Our Team</span>
+    </div>
+
+    <div class="team-showcase__stage">
+      <button class="team-showcase__arrow team-showcase__arrow--prev" id="teamPrev" aria-label="Previous team member">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+      </button>
+
+      <div class="team-showcase__content" id="teamContent">
+        <p class="team-showcase__office" id="teamOffice">Australia</p>
+        <h2 class="team-showcase__name" id="teamName">Boipelo Ntsoane</h2>
+        <p class="team-showcase__role" id="teamRole">Founder &amp; Strategic Intelligence Architect</p>
+        <p class="team-showcase__bio" id="teamBio">
+          Boipelo founded Holkam Advisory with a conviction that business owners deserve
+          intelligence that is precise, forward-looking, and built around the decisions they
+          actually need to make. Currently studying Computer Science and holding a
+          certification in IT Management, he combines technical rigour with strategic clarity
+          across every engagement.
+        </p>
+        <div class="team-showcase__actions" id="teamActions">
+          <a href="https://www.linkedin.com/in/boipelo-ntsoane/" target="_blank" rel="noopener noreferrer" class="team-page-card__linkedin" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:info@holkamadvisory.com" class="team-page-card__email" aria-label="Email">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+            Email
+          </a>
+        </div>
+      </div>
+
+      <div class="team-showcase__photo-wrap" id="teamPhotoWrap">
+        <img class="team-showcase__photo" id="teamPhoto" src="assets/images/Me (Transparent).png" alt="Boipelo Ntsoane" />
+      </div>
+
+      <button class="team-showcase__arrow team-showcase__arrow--next" id="teamNext" aria-label="Next team member">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
+
+      <div class="team-filmstrip" id="teamFilmstrip"></div>
+    </div>
   </div>
 
   <!-- OFFICES BAND -->
@@ -372,37 +551,6 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- TEAM GRID -->
-  <div class="team-page-grid">
-
-    <div class="team-page-card animate-on-scroll">
-      <div class="team-page-card__photo">
-        <img src="assets/images/boipelo.jpg" alt="Boipelo Ntsoane" onerror="this.style.display='none';" />
-      </div>
-      <span class="team-page-card__office">Australia</span>
-      <h2 class="team-page-card__name">Boipelo Ntsoane</h2>
-      <p class="team-page-card__role">Founder &amp; Strategic Intelligence Architect</p>
-      <p class="team-page-card__bio">
-        Boipelo founded Holkam Advisory with a conviction that business owners deserve
-        intelligence that is precise, forward-looking, and built around the decisions they
-        actually need to make. Currently studying Computer Science and holding a
-        certification in IT Management, he combines technical rigour with strategic clarity
-        across every engagement.
-      </p>
-      <div class="team-page-card__actions">
-        <a href="https://www.linkedin.com/in/boipelo-ntsoane/" target="_blank" rel="noopener noreferrer" class="team-page-card__linkedin" aria-label="LinkedIn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-        <a href="mailto:info@holkamadvisory.com" class="team-page-card__email" aria-label="Email Boipelo">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-          Email
-        </a>
-      </div>
-    </div>
-
   </div>
 
   <!-- JOIN CTA -->
@@ -462,6 +610,12 @@
         </div>
       </div>
     </div>
+    <div class="footer-disclaimer">
+      <div class="container">
+        <p class="footer-disclaimer__text">Holkam Advisory provides regulatory, competitive, and market intelligence. We do not provide legal advice, and nothing on this site or in our reports should be relied upon as such. No attorney-client, advocate-client, or similar relationship is formed by using our website, services, or content. Clients should seek advice from a qualified, admitted legal practitioner for any legal matter.</p>
+      </div>
+    </div>
+
     <div class="footer-bar">
       <div class="container footer-bar__inner">
         <p class="footer-bar__copy">&copy; 2026 Holkam Advisory (Pty) Ltd. All rights reserved.</p>
@@ -473,6 +627,112 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // To add a team member, append an object here — the showcase and filmstrip render from this array.
+    const TEAM_MEMBERS = [
+      {
+        office: 'Australia',
+        name: 'Boipelo Ntsoane',
+        role: 'Founder &amp; Strategic Intelligence Architect',
+        bio: `Boipelo founded Holkam Advisory with a conviction that business owners deserve
+          intelligence that is precise, forward-looking, and built around the decisions they
+          actually need to make. Currently studying Computer Science and holding a
+          certification in IT Management, he combines technical rigour with strategic clarity
+          across every engagement.`,
+        photo: 'assets/images/Me (Transparent).png',
+        avatar: 'assets/images/boipelo-circle.png',
+        linkedin: 'https://www.linkedin.com/in/boipelo-ntsoane/',
+        email: 'info@holkamadvisory.com'
+      }
+    ];
+
+    (function initTeamShowcase() {
+      const filmstrip = document.getElementById('teamFilmstrip');
+      const content = document.getElementById('teamContent');
+      const photoWrap = document.getElementById('teamPhotoWrap');
+      const officeEl = document.getElementById('teamOffice');
+      const nameEl = document.getElementById('teamName');
+      const roleEl = document.getElementById('teamRole');
+      const bioEl = document.getElementById('teamBio');
+      const actionsEl = document.getElementById('teamActions');
+      const photoEl = document.getElementById('teamPhoto');
+      const prevBtn = document.getElementById('teamPrev');
+      const nextBtn = document.getElementById('teamNext');
+
+      let activeIndex = 0;
+      let shuffleTimer = null;
+
+      filmstrip.innerHTML = TEAM_MEMBERS.map((member, i) => `
+        <button class="team-filmstrip__item${i === 0 ? ' is-active' : ''}" data-index="${i}" aria-label="Show ${member.name}">
+          <span class="team-filmstrip__avatar"><img src="${member.avatar}" alt="" /></span>
+          <span class="team-filmstrip__name">${member.name}</span>
+          <span class="team-filmstrip__role">${member.role.replace(/&amp;/g, '&')}</span>
+        </button>
+      `).join('');
+
+      const filmstripItems = filmstrip.querySelectorAll('.team-filmstrip__item');
+
+      function render(index) {
+        const member = TEAM_MEMBERS[index];
+
+        content.classList.add('is-fading');
+        photoWrap.classList.add('is-fading');
+
+        setTimeout(() => {
+          officeEl.textContent = member.office;
+          nameEl.textContent = member.name;
+          roleEl.innerHTML = member.role;
+          bioEl.textContent = member.bio.replace(/\s+/g, ' ').trim();
+          photoEl.src = member.photo;
+          photoEl.alt = member.name;
+
+          actionsEl.innerHTML = `
+            <a href="${member.linkedin}" target="_blank" rel="noopener noreferrer" class="team-page-card__linkedin" aria-label="LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <a href="mailto:${member.email}" class="team-page-card__email" aria-label="Email">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+              Email
+            </a>
+          `;
+
+          content.classList.remove('is-fading');
+          photoWrap.classList.remove('is-fading');
+        }, 220);
+
+        filmstripItems.forEach((item, i) => item.classList.toggle('is-active', i === index));
+        activeIndex = index;
+      }
+
+      function goTo(index) {
+        const total = TEAM_MEMBERS.length;
+        render((index + total) % total);
+        resetShuffle();
+      }
+
+      function resetShuffle() {
+        if (shuffleTimer) clearInterval(shuffleTimer);
+        if (TEAM_MEMBERS.length > 1) {
+          shuffleTimer = setInterval(() => goTo(activeIndex + 1), 5000);
+        }
+      }
+
+      prevBtn.addEventListener('click', () => goTo(activeIndex - 1));
+      nextBtn.addEventListener('click', () => goTo(activeIndex + 1));
+      filmstripItems.forEach(item => {
+        item.addEventListener('click', () => goTo(parseInt(item.dataset.index, 10)));
+      });
+
+      if (TEAM_MEMBERS.length <= 1) {
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+      }
+
+      resetShuffle();
+    })();
+  </script>
 
   <script src="js/main.js" defer></script>
 </body>
