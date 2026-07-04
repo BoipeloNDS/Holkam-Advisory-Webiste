@@ -20,8 +20,7 @@
   <style>
     /* ── News card template — ready for future entries ──
        To publish an announcement, duplicate one .news-card block
-       inside .news-grid and remove the .news-empty section below
-       once at least one entry exists. */
+       inside .news-grid. */
     .news-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -62,30 +61,6 @@
       color: var(--color-mid);
       line-height: 1.7;
       flex: 1;
-    }
-
-    .news-empty {
-      border: 1px solid var(--color-light);
-      padding: var(--space-64) var(--space-48);
-      text-align: center;
-      max-width: 560px;
-      margin-inline: auto;
-    }
-
-    .news-empty__title {
-      font-family: var(--font-display);
-      font-size: var(--text-2xl);
-      font-style: italic;
-      color: var(--color-dark);
-      margin-bottom: var(--space-16);
-    }
-
-    .news-empty__body {
-      font-family: var(--font-body);
-      font-size: var(--text-lg);
-      color: var(--color-mid);
-      line-height: 1.75;
-      margin-bottom: var(--space-24);
     }
 
     @media (max-width: 1024px) { .news-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -194,26 +169,17 @@
   <section style="background: var(--color-white); padding-bottom: var(--space-120);">
     <div class="container">
 
-      <div class="news-grid" style="display:none;">
-        <!-- Example entry — duplicate this block per announcement, then
-             remove the inline display:none above and the .news-empty
-             block below once at least one entry is published.
-        <a href="#" class="news-card animate-on-scroll">
-          <span class="news-card__date">Month 2026</span>
-          <h2 class="news-card__title">Headline goes here</h2>
-          <p class="news-card__excerpt">One or two sentence summary of the announcement.</p>
+      <div class="news-grid">
+        <!-- Duplicate this block per announcement. -->
+        <a href="https://www.linkedin.com/company/holkamadvisory/" target="_blank" rel="noopener noreferrer" class="news-card animate-on-scroll">
+          <span class="news-card__date">July 2026</span>
+          <h2 class="news-card__title">Holkam Advisory is now on LinkedIn</h2>
+          <p class="news-card__excerpt">
+            Our company page is live. Follow along for regulatory intelligence
+            updates and analysis tracking Australia&rsquo;s 12&ndash;18 month
+            head start on South African law firms.
+          </p>
         </a>
-        -->
-      </div>
-
-      <div class="news-empty animate-on-scroll">
-        <p class="news-empty__title"><em>Nothing to report yet.</em></p>
-        <p class="news-empty__body">
-          We&rsquo;d rather leave this page empty than fill it with noise. Announcements
-          will appear here as they happen. In the meantime, our ongoing analysis
-          is published in Insights.
-        </p>
-        <a href="articles.html" class="btn btn--outline">Read Our Insights</a>
       </div>
 
     </div>
